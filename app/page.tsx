@@ -71,7 +71,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="mb-6 md:mb-8 lg:mb-16 relative"
         >
-          <h1 className="text-2xl mt-4 md:text-4xl lg:text-6xl xl:text-8xl font-black mb-4 md:mb-6 orbitron">
+          <h1 className="text-6xl sm:text-16xl md:text-4xl lg:text-6xl xl:text-8xl font-black mb-4 md:mb-6 orbitron">
             <span className="gradient-text animate-neon-flicker">$RATECUTS</span>
           </h1>
           <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8">
@@ -85,11 +85,11 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="flex flex-col md:flex-row justify-center items-center gap-0 mb-6 md:mb-16 px-4 relative z-10 w-full"
+          className="flex flex-row justify-center items-center gap-1 sm:gap-2 md:gap-0 mb-6 md:mb-16 px-2 sm:px-4 relative z-10 w-full"
         >
           {/* Rate Character */}
           <motion.div
-            className="relative group flex flex-col items-center flex-shrink-0 -mr-8 md:-mr-16 lg:-mr-20"
+            className="relative group flex flex-col items-center flex-shrink-0 order-1 sm:-mr-2 md:-mr-4 lg:-mr-8"
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1, y: [0, -15, 0] }}
             transition={{ 
@@ -99,7 +99,7 @@ export default function Home() {
             }}
           >
             <motion.div 
-              className="w-64 h-64 sm:w-80 sm:h-80 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] xl:w-[36rem] xl:h-[36rem] flex items-center justify-center mb-2 md:mb-4 relative"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
               animate={{
                 scale: [1, 1.1, 1],
                 rotate: [0, 5, -5, 0]
@@ -121,31 +121,30 @@ export default function Home() {
                 transition={{ duration: 0.5, repeat: Infinity }}
               />
             </motion.div>
-            <h3 className="text-lg md:text-xl font-bold text-yellow-400 inter mb-1 animate-neon-flicker" style={{textShadow: '0 0 10px rgba(234, 179, 8, 0.8), 0 0 20px rgba(234, 179, 8, 0.6), 0 0 30px rgba(234, 179, 8, 0.4)'}}>Rate Riser</h3>
+            <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-yellow-400 inter mb-1 animate-neon-flicker" style={{textShadow: '0 0 15px rgba(234, 179, 8, 0.9), 0 0 25px rgba(234, 179, 8, 0.7), 0 0 35px rgba(234, 179, 8, 0.5)'}}>Rate Riser</h3>
             {/* <p className="text-xs md:text-sm text-red-400 orbitron font-bold">BEARISH BEAST</p> */}
           </motion.div>
 
           {/* POWELL INDEX - CENTER AND MASSIVE */}
           <motion.div
-            className="relative flex flex-col items-center flex-1 max-w-2xl -mx-8 md:-mx-16 lg:-mx-20 z-10"
+            className="relative flex flex-col items-center flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg order-2 sm:-mx-1 md:-mx-4 lg:-mx-8 z-10"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
             {/* Interactive Powell Index Gauge */}
-            <div className="w-full max-w-md mx-auto mb-4 min-h-[350px] flex items-center justify-center">
+            <div className="w-full flex items-center justify-center">
               <PowellIndex />
             </div>
            
-            <div className="text-md md:text-lg lg:text-2xl mt-20 font-bold text-white orbitron animate-neon-flicker" style={{textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)'}}>
-            
+            <div className="text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl mt-4 md:mt-8  font-bold text-white orbitron animate-neon-flicker text-center px-4" style={{textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)'}}>
               ngmi if u leave now… chaos coming soon.
             </div>
           </motion.div>
 
           {/* Cut Character */}
           <motion.div
-            className="relative group flex flex-col items-center flex-shrink-0 -ml-8 md:-ml-16 lg:-ml-20"
+            className="relative group flex flex-col items-center flex-shrink-0 order-3 sm:-ml-2 md:-ml-4 lg:-ml-8"
             initial={{ x: 300, opacity: 0 }}
             animate={{ x: 0, opacity: 1, y: [0, -20, 0] }}
             transition={{ 
@@ -155,7 +154,7 @@ export default function Home() {
             }}
           >
             <motion.div 
-              className="w-64 h-64 sm:w-80 sm:h-80 md:w-[28rem] md:h-[28rem] lg:w-[32rem] lg:h-[32rem] xl:w-[36rem] xl:h-[36rem] flex items-center justify-center mb-2 md:mb-4 relative"
+              className="w-20 h-20 sm:w-24 sm:h-24 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
               animate={{
                 scale: [1, 1.1, 1],
                 rotate: [0, 5, -5, 0]
@@ -177,7 +176,7 @@ export default function Home() {
                 transition={{ duration: 0.5, repeat: Infinity }}
               />
             </motion.div>
-            <h3 className="text-lg md:text-xl font-bold text-red-400 space-grotesk mb-1 animate-neon-flicker" style={{textShadow: '0 0 10px rgba(239, 68, 68, 0.8), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.4)'}}>Powell Puncher </h3>
+            <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-red-400 space-grotesk mb-1 animate-neon-flicker" style={{textShadow: '0 0 15px rgba(239, 68, 68, 0.9), 0 0 25px rgba(239, 68, 68, 0.7), 0 0 35px rgba(239, 68, 68, 0.5)'}}>Powell Puncher </h3>
             {/* <p className="text-xs md:text-sm text-green-400 orbitron font-bold">BULLISH WARRIOR</p> */}
           </motion.div>
         </motion.div>
@@ -187,7 +186,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mb-8 md:mb-12"
+          className="mb-8 md:mb-12 mt-8 md:mt-16 px-4 text-center"
         >
           {/* <div className="text-lg md:text-2xl lg:text-3xl font-bold text-green-400 orbitron animate-neon-flicker mb-4" style={{textShadow: '0 0 5px #4ade80, 0 0 10px #4ade80'}}>
             COMING SOON
@@ -195,13 +194,13 @@ export default function Home() {
           {/* <p className="text-xl md:text-2xl lg:text-3xl font-black text-pink-400 press-start animate-neon-flicker mb-4">
             ngmi if u leave now… chaos coming soon.
           </p> */}
-          <h2 className="text-2xl md:text-4xl lg:text-6xl font-black space-grotesk mb-4 md:mb-6">
+          <h2 className="text-xl md:text-3xl lg:text-5xl font-black space-grotesk mb-4 md:mb-6">
             <span className="text-orange-400 animate-neon-flicker">CHAOS LOADING</span>
           </h2>
-          <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed inter font-bold">
+          <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed inter font-bold mb-4">
             <span className="gradient-text">WHEN POWELL CUTS, WE MOON</span> 🚀
           </p>
-          <p className="text-sm md:text-lg text-red-400 mt-2 md:mt-4 orbitron animate-pulse">
+          <p className="text-sm md:text-base text-red-400 mt-2 md:mt-4 orbitron animate-pulse">
             THE ULTIMATE MEME CHAOS IS LOADING...
           </p>
         </motion.div>
@@ -241,21 +240,21 @@ export default function Home() {
           transition={{ duration: 1, delay: 1.5 }}
           className="mt-6 md:mt-8 lg:mt-12"
         >
-          <div className="neon-card mb-12 p-4 md:p-6 rounded-2xl max-w-sm md:max-w-md mx-auto relative">
+          <div className="neon-card mb-12 p-6 md:p-8 rounded-2xl w-full max-w-sm md:max-w-md mx-auto relative">
             <div className="absolute -top-1 -left-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping" />
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping" />
             
-            <h3 className="text-base md:text-lg font-black text-orange-400 space-grotesk mb-2 md:mb-4 animate-neon-flicker">
+            <h3 className="text-lg md:text-xl font-black text-orange-400 space-grotesk mb-4 md:mb-6 animate-neon-flicker text-center">
               CHAOS METER
             </h3>
-            <div className="w-full bg-gray-800 rounded-full h-3 md:h-4 mb-2 border-2 border-yellow-400/50">
+            <div className="w-full bg-gray-800 rounded-full h-4 md:h-5 mb-3 border-2 border-yellow-400/50">
               <motion.div
                 className="h-full bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 rounded-full"
                 animate={{ width: ['0%', '100%', '0%'] }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
             </div>
-            <p className="text-xs md:text-sm text-gray-400 orbitron">MAXIMUM CHAOS INCOMING...</p>
+            <p className="text-sm md:text-base text-gray-400 orbitron text-center">MAXIMUM CHAOS INCOMING...</p>
           </div>
         </motion.div>
       </div>
