@@ -130,7 +130,7 @@ export default function Home() {
           </motion.div>
 
           <div className="relative">
-            <div className="text-xs sm:text-sm md:text-xl lg:text-3xl xl:text-4xl font-bold text-green-400 orbitron whitespace-nowrap animate-neon-flicker px-2 md:px-0 py-2 md:py-4" style={{textShadow: '0 0 10px #4ade80, 0 0 20px #4ade80, 0 0 30px #4ade80, 0 0 40px #4ade80'}}>
+            <div className="text-xs sm:text-sm md:text-xl lg:text-3xl xl:text-4xl font-bold text-green-400 orbitron whitespace-nowrap animate-neon-flicker px-2 md:px-0 py-2 md:py-4" style={{textShadow: '0 0 5px #4ade80, 0 0 10px #4ade80'}}>
               COMING SOON
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function Home() {
                 transition={{ duration: 0.5, repeat: Infinity }}
               />
             </motion.div>
-            <h3 className="text-lg md:text-xl font-bold text-cyan-400 space-grotesk mb-1 md:mb-2 animate-neon-flicker">CUT</h3>
+            <h3 className="text-lg md:text-xl font-bold text-green-600 space-grotesk mb-1 md:mb-2 animate-neon-flicker">CUT</h3>
             <p className="text-xs md:text-sm text-green-400 orbitron font-bold">BULLISH WARRIOR</p>
           </motion.div>
         </motion.div>
@@ -180,7 +180,7 @@ export default function Home() {
           className="mb-8 md:mb-12"
         >
           <h2 className="text-2xl md:text-4xl lg:text-6xl font-black space-grotesk mb-4 md:mb-6">
-            <span className="text-gereen-400 animate-neon-flicker">CHAOS LOADING</span>
+            <span className="text-orange-400 animate-neon-flicker">CHAOS LOADING</span>
           </h2>
           <p className="text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto leading-relaxed inter font-bold">
             <span className="gradient-text">WHEN POWELL CUTS, WE MOON</span> 🚀
@@ -223,7 +223,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="mt-6 md:mt-8 lg:mt-12"
+          className="mt-6 md:mt-8 lg:mt-12 mb-12"
         >
           <div className="neon-card p-4 md:p-6 rounded-2xl max-w-sm md:max-w-md mx-auto relative">
             <div className="absolute -top-1 -left-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping" />
