@@ -2,8 +2,20 @@
 
 import { motion } from 'framer-motion';
 import PowellIndex from '@/components/PowellIndex';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
+  const [animationIcons, setAnimationIcons] = useState<string[]>([]);
+
+  useEffect(() => {
+    // Generate random icons after component mounts to avoid SSR mismatch
+    const icons = ['✂️', '%'];
+    const randomIcons = Array.from({ length: 30 }, () => 
+      icons[Math.floor(Math.random() * icons.length)]
+    );
+    setAnimationIcons(randomIcons);
+  }, []);
+
   return (
     <main className="min-h-screen lightning-bg flex items-start md:items-center justify-center overflow-hidden relative pt-8 md:pt-0">
       <div className="absolute inset-0">
@@ -13,14 +25,14 @@ export default function Home() {
         <div className="absolute top-5 md:top-10 right-20 md:right-40 w-32 h-32 md:w-64 md:h-64 bg-cyan-400/15 rounded-full blur-3xl animate-lightning" />
         <div className="absolute bottom-5 md:bottom-10 left-20 md:left-40 w-32 h-32 md:w-64 md:h-64 bg-green-400/15 rounded-full blur-3xl animate-lightning" />
         
-        {[...Array(30)].map((_, i) => (
+        {animationIcons.map((icon, i) => (
           <motion.div
             key={i}
-            className={`absolute w-1 h-1 md:w-2 md:h-2 rounded-full opacity-80 ${
-              i % 5 === 0 ? 'bg-yellow-400' :
-              i % 5 === 1 ? 'bg-red-500' :
-              i % 5 === 2 ? 'bg-pink-500' :
-              i % 5 === 3 ? 'bg-cyan-400' : 'bg-green-400'
+            className={`absolute text-sm md:text-lg opacity-40 ${
+              i % 5 === 0 ? 'text-yellow-400' :
+              i % 5 === 1 ? 'text-red-500' :
+              i % 5 === 2 ? 'text-pink-500' :
+              i % 5 === 3 ? 'text-cyan-400' : 'text-green-400'
             }`}
             style={{
               left: `${Math.random() * 100}%`,
@@ -29,15 +41,18 @@ export default function Home() {
             animate={{
               y: [0, -40, 0],
               x: [0, Math.random() * 30 - 15, 0],
-              opacity: [0.3, 1, 0.3],
-              scale: [1, 2, 1],
+              opacity: [0.2, 0.5, 0.2],
+              scale: [1, 1.2, 1],
+              rotate: [0, 360, 0],
             }}
             transition={{
-              duration: 3 + Math.random() * 2,
+              duration: 4 + Math.random() * 3,
               repeat: Infinity,
               delay: Math.random() * 2,
             }}
-          />
+          >
+            {icon}
+          </motion.div>
         ))}
 
         {[...Array(12)].map((_, i) => (
