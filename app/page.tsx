@@ -71,7 +71,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="mb-6 md:mb-8 lg:mb-16 relative"
         >
-          <h1 className="text-6xl sm:text-16xl md:text-4xl lg:text-6xl xl:text-8xl font-black mb-4 md:mb-6 orbitron">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-8xl font-black mb-4 md:mb-6 orbitron">
             <span className="gradient-text animate-neon-flicker">$RATECUTS</span>
           </h1>
           <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8">
@@ -85,11 +85,11 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="flex flex-row justify-center items-center gap-1 sm:gap-2 md:gap-0 mb-6 md:mb-16 px-2 sm:px-4 relative z-10 w-full"
+          className="flex flex-row justify-center items-center gap-0 sm:gap-1 md:gap-0 mb-6 md:mb-16 px-2 sm:px-4 relative z-10 w-full"
         >
           {/* Rate Character */}
           <motion.div
-            className="relative group flex flex-col items-center flex-shrink-0 order-1 sm:-mr-2 md:-mr-4 lg:-mr-8"
+            className="relative group flex flex-col items-center flex-shrink-0 order-1 sm:-mr-3 md:-mr-4 lg:-mr-8"
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1, y: [0, -15, 0] }}
             transition={{ 
@@ -99,7 +99,7 @@ export default function Home() {
             }}
           >
             <motion.div 
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
+              className="w-28 h-28 sm:w-32 sm:h-32 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
               animate={{
                 scale: [1, 1.1, 1],
                 rotate: [0, 5, -5, 0]
@@ -127,7 +127,7 @@ export default function Home() {
 
           {/* POWELL INDEX - CENTER AND MASSIVE */}
           <motion.div
-            className="relative flex flex-col items-center flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg order-2 sm:-mx-1 md:-mx-4 lg:-mx-8 z-10"
+            className="relative flex flex-col items-center flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg order-2 sm:-mx-2 md:-mx-4 lg:-mx-8 z-10"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
@@ -144,7 +144,7 @@ export default function Home() {
 
           {/* Cut Character */}
           <motion.div
-            className="relative group flex flex-col items-center flex-shrink-0 order-3 sm:-ml-2 md:-ml-4 lg:-ml-8"
+            className="relative group flex flex-col items-center flex-shrink-0 order-3 sm:-ml-3 md:-ml-4 lg:-ml-8"
             initial={{ x: 300, opacity: 0 }}
             animate={{ x: 0, opacity: 1, y: [0, -20, 0] }}
             transition={{ 
@@ -154,7 +154,7 @@ export default function Home() {
             }}
           >
             <motion.div 
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
+              className="w-28 h-28 sm:w-32 sm:h-32 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
               animate={{
                 scale: [1, 1.1, 1],
                 rotate: [0, 5, -5, 0]
