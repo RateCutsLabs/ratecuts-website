@@ -2,26 +2,48 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import GaugeChart from 'react-gauge-chart';
+import dynamic from 'next/dynamic';
+
+// Dynamically import GaugeChart to prevent SSR issues
+const GaugeChart = dynamic(() => import('react-gauge-chart'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full flex items-center justify-center">
+      <div className="w-80 h-80 border-4 border-gray-600 rounded-full animate-pulse"></div>
+    </div>
+  )
+});
 
 export default function PowellIndex() {
   const [indexValue, setIndexValue] = useState(50);
+  const [isComponentReady, setIsComponentReady] = useState(false);
+
+  // Initialize component after mount to ensure proper loading
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsComponentReady(true);
+    }, 1000); // Wait 1 second before showing the component
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Auto-animate the gauge value for demo purposes
   useEffect(() => {
+    if (!isComponentReady) return;
+    
     const interval = setInterval(() => {
-      const newValue = 30 + Math.random() * 40; // Random value between 30-70
+      const newValue = Math.random() * 100; // Random value between 0-100 (full range)
       setIndexValue(newValue);
     }, 3000); // Update every 3 seconds
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isComponentReady]);
 
   const getGaugeColors = () => {
-    if (indexValue < 30) return {
+    if (indexValue < 33) return {
       text: 'text-red-400'
     };
-    if (indexValue < 70) return {
+    if (indexValue < 67) return {
       text: 'text-yellow-400'
     };
     return {
@@ -30,6 +52,22 @@ export default function PowellIndex() {
   };
 
   const colors = getGaugeColors();
+
+  // Show loading state until component is ready
+  if (!isComponentReady) {
+    return (
+      <div className="relative flex flex-col items-center" style={{ width: '500px', height: '400px' }}>
+        <div className="text-3xl md:text-4xl font-black text-white space-grotesk animate-pulse mb-6">
+          LOADING...
+        </div>
+        <div className="flex items-center justify-center" style={{ width: '500px', height: '350px' }}>
+          <div className="w-80 h-80 border-4 border-gray-600 rounded-full animate-spin">
+            <div className="w-full h-full border-t-4 border-yellow-400 rounded-full animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative flex flex-col items-center">
@@ -63,7 +101,7 @@ export default function PowellIndex() {
             repeat: Infinity,
           }}
         >
-          <div className="relative">
+          <div className="relative" style={{ width: '500px', height: '350px' }}>
             <GaugeChart 
               id="powell-gauge"
               nrOfLevels={3}

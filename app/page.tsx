@@ -133,7 +133,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             {/* Interactive Powell Index Gauge */}
-            <div className="w-full max-w-md mx-auto mb-4">
+            <div className="w-full max-w-md mx-auto mb-4 min-h-[350px] flex items-center justify-center">
               <PowellIndex />
             </div>
            
