@@ -91,7 +91,7 @@ export default function PowellIndex() {
         </div>
         
         {/* Gauge */}
-        <motion.div 
+        {/* <motion.div 
           className="flex justify-center w-full h-full"
           animate={{ 
             scale: [1, 1.02, 1],
@@ -100,7 +100,7 @@ export default function PowellIndex() {
             duration: 2,
             repeat: Infinity,
           }}
-        >
+        > */}
           <div className="relative w-full h-full">
             <GaugeChart 
               id="powell-gauge"
@@ -126,7 +126,7 @@ export default function PowellIndex() {
               </div>
             </div>
           </div>
-        </motion.div>
+        {/* </motion.div> */}
         
         {/* Right Label - CUT NOW */}
         <div className="absolute right-[5px] sm:right-[17px] md:right-[24px] lg:right-[30px] bottom-[7px] sm:bottom-[11px] md:bottom-[16px] lg:bottom-[20px]">
