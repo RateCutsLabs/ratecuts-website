@@ -71,7 +71,7 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="mb-6 md:mb-8 lg:mb-16 relative"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-8xl font-black mb-4 md:mb-6 orbitron">
+          <h1 className="text-6xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-8xl font-black mb-4 md:mb-6 orbitron">
             <span className="gradient-text animate-neon-flicker">$RATECUTS</span>
           </h1>
           <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8">
