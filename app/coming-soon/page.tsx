@@ -1,16 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Users } from 'lucide-react';
 import PowellIndex from '@/components/PowellIndex';
 
-export default function Hero() {
+export default function ComingSoon() {
   return (
-    <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-8 md:pt-0">
+    <main className="min-h-screen flex items-start md:items-center justify-center overflow-hidden relative pt-8 md:pt-0">
       <div className="relative z-10 text-center px-2 w-full mx-auto mt-8 md:mt-0">
-        {/* Main Title - Matching Coming Soon Style */}
-        {/* <motion.div
+        <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -24,9 +21,8 @@ export default function Hero() {
             <span className="text-cyan-400 text-xs md:text-sm font-bold tracking-wider uppercase space-grotesk animate-neon-flicker">MEME CHAOS</span>
             <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-8 md:max-w-16 lg:max-w-32 animate-pulse" />
           </div>
-        </motion.div> */}
+        </motion.div>
 
-        {/* Character Showcase with Powell Index - Matching Coming Soon Page */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -81,6 +77,10 @@ export default function Hero() {
             <div className="w-full flex items-center justify-center">
               <PowellIndex />
             </div>
+           
+            <div className="text-xs sm:text-sm md:text-sm lg:text-lg xl:text-xl mt-4 md:mt-8  font-bold text-white orbitron animate-neon-flicker text-center px-4" style={{textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4)'}}>
+              ngmi if u leave now… chaos coming soon.
+            </div>
           </motion.div>
 
           {/* Cut Character */}
@@ -117,11 +117,11 @@ export default function Hero() {
                 transition={{ duration: 0.5, repeat: Infinity }}
               />
             </motion.div>
-            <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-red-400 space-grotesk mb-1 animate-neon-flicker" style={{textShadow: '0 0 15px rgba(239, 68, 68, 0.9), 0 0 25px rgba(239, 68, 68, 0.7), 0 0 35px rgba(239, 68, 68, 0.5)'}}>Powell Puncher</h3>
+            <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-red-400 space-grotesk mb-1 animate-neon-flicker" style={{textShadow: '0 0 15px rgba(239, 68, 68, 0.9), 0 0 25px rgba(239, 68, 68, 0.7), 0 0 35px rgba(239, 68, 68, 0.5)'}}>Powell Puncher </h3>
           </motion.div>
         </motion.div>
 
-        {/* Tagline */}
+        {/* TAGLINE AND COMING SOON */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,64 +129,40 @@ export default function Hero() {
           className="mb-8 md:mb-12 mt-8 md:mt-16 px-4 text-center"
         >
           <h2 className="text-xl md:text-3xl lg:text-5xl font-black space-grotesk mb-4 md:mb-6">
-            <span className="text-orange-400 animate-neon-flicker">WHEN POWELL CUTS, WE MOON</span>
+            <span className="text-orange-400 animate-neon-flicker">CHAOS LOADING</span>
           </h2>
           <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed inter font-bold mb-4">
-            <span className="gradient-text">THE ULTIMATE MEME TOKEN CHAOS</span> 🚀<br/>
-            <span className="text-yellow-400 font-bold">ARCADE • MAYHEM • MOON MISSION</span>
+            <span className="gradient-text">WHEN POWELL CUTS, WE MOON</span> 🚀
+          </p>
+          <p className="text-sm md:text-base text-red-400 mt-2 md:mt-4 orbitron animate-pulse">
+            THE ULTIMATE MEME CHAOS IS LOADING...
           </p>
         </motion.div>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          transition={{ duration: 1, delay: 1.5 }}
+          className="mt-6 md:mt-8 lg:mt-12"
         >
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:from-yellow-300 hover:via-red-400 hover:to-pink-400 text-black font-black text-lg px-8 py-4 rounded-2xl shadow-lg chaos-glow transition-all duration-300 press-start animate-chaos-pulse"
-          >
-            <ExternalLink className="mr-2 h-5 w-5" />
-            BUY CHAOS
-          </Button>
-          
-          <Button
-            size="lg"
-            className="bg-transparent border-4 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-black text-lg px-8 py-4 rounded-2xl shadow-lg hover:chaos-glow transition-all duration-300 press-start animate-neon-flicker"
-          >
-            <Users className="mr-2 h-5 w-5" />
-            JOIN MAYHEM
-          </Button>
-        </motion.div>
-
-        {/* Chaotic Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-        >
-          {[
-            { label: 'CHAOS CAP', value: '$420K', color: 'text-yellow-400', bg: 'from-yellow-400/20 to-orange-500/20' },
-            { label: 'DEGENS', value: '6,969', color: 'text-red-400', bg: 'from-red-400/20 to-pink-500/20' },
-            { label: 'MAYHEM VOL', value: '$1.2M', color: 'text-pink-400', bg: 'from-pink-400/20 to-purple-500/20' },
-            { label: 'POWELL RAGE', value: 'MAX', color: 'text-green-400', bg: 'from-green-400/20 to-cyan-500/20' },
-          ].map((stat, index) => (
-            <motion.div 
-              key={index} 
-              className={`neon-card p-4 rounded-xl text-center bg-gradient-to-br ${stat.bg} animate-chaos-pulse`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className={`text-2xl font-black ${stat.color} press-start animate-neon-flicker`}>
-                {stat.value}
-              </div>
-              <div className="text-xs text-gray-400 mt-2 orbitron font-bold">{stat.label}</div>
-            </motion.div>
-          ))}
+          <div className="neon-card mb-12 p-6 md:p-8 rounded-2xl w-full max-w-sm md:max-w-md mx-auto relative">
+            <div className="absolute -top-1 -left-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping" />
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping" />
+            
+            <h3 className="text-lg md:text-xl font-black text-orange-400 space-grotesk mb-4 md:mb-6 animate-neon-flicker text-center">
+              CHAOS METER
+            </h3>
+            <div className="w-full bg-gray-800 rounded-full h-4 md:h-5 mb-3 border-2 border-yellow-400/50">
+              <motion.div
+                className="h-full bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 rounded-full"
+                animate={{ width: ['0%', '100%', '0%'] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              />
+            </div>
+            <p className="text-sm md:text-base text-gray-400 orbitron text-center">MAXIMUM CHAOS INCOMING...</p>
+          </div>
         </motion.div>
       </div>
-    </section>
+    </main>
   );
 }

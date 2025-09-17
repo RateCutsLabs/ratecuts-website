@@ -6,41 +6,8 @@ import { ExternalLink, MessageCircle, Twitter, Send, Zap, Flame, Star } from 'lu
 
 export default function Footer() {
   return (
-    <footer className="lightning-bg py-20 relative overflow-hidden border-t-4 border-yellow-400/50">
-      {/* Chaotic Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl animate-lightning" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-lightning" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl animate-lightning" />
-        
-        {/* Floating Chaos */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className={`absolute w-1 h-1 rounded-full ${
-              i % 5 === 0 ? 'bg-yellow-400' :
-              i % 5 === 1 ? 'bg-red-500' :
-              i % 5 === 2 ? 'bg-pink-500' :
-              i % 5 === 3 ? 'bg-cyan-400' : 'bg-green-400'
-            }`}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              x: [0, Math.random() * 20 - 10, 0],
-              opacity: [0.3, 1, 0.3],
-              scale: [1, 2, 1],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
+    <footer className="py-20 relative overflow-hidden border-t-4 border-yellow-400/50">
+      {/* Remove chaotic background since it's now global */}
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Main Footer Content */}
