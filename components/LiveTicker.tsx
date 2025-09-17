@@ -24,43 +24,29 @@ export default function LiveTicker() {
 
   const tickerData = [
     { 
-      label: '$RATECUTS', 
-      value: `$${price.toFixed(6)}`, 
+      label: 'Market Cap', 
+      value: `$${(marketCap / 1000).toFixed(0)}K`, 
       color: 'text-yellow-400',
       icon: null,
       glow: 'shadow-yellow-400/50'
     },
     { 
-      label: 'CHAOS CHANGE', 
-      value: `${change24h > 0 ? '+' : ''}${change24h.toFixed(1)}%`, 
-      color: change24h > 0 ? 'text-green-400' : 'text-red-400',
-      icon: change24h > 0 ? TrendingUp : TrendingDown,
-      glow: change24h > 0 ? 'shadow-green-400/50' : 'shadow-red-400/50'
+      label: 'Holders', 
+      value: '6,969', 
+      color: 'text-green-400',
+      icon: null,
+      glow: 'shadow-green-400/50'
     },
     { 
-      label: 'MAYHEM VOL', 
-      value: `$${(volume / 1000).toFixed(0)}K`, 
+      label: '24h Volume', 
+      value: `$${(volume / 1000000).toFixed(1)}M`, 
       color: 'text-cyan-400',
       icon: Zap,
       glow: 'shadow-cyan-400/50'
     },
     { 
-      label: 'CHAOS CAP', 
-      value: `$${(marketCap / 1000).toFixed(0)}K`, 
-      color: 'text-pink-400',
-      icon: null,
-      glow: 'shadow-pink-400/50'
-    },
-    { 
-      label: 'DEGENS', 
-      value: '6,969', 
-      color: 'text-orange-400',
-      icon: null,
-      glow: 'shadow-orange-400/50'
-    },
-    { 
-      label: 'POWELL RAGE', 
-      value: '🔥 MAX CHAOS', 
+      label: 'Powell Rage', 
+      value: 'MAX', 
       color: 'text-red-400',
       icon: Flame,
       glow: 'shadow-red-400/50'

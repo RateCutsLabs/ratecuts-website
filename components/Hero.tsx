@@ -126,14 +126,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mb-8 md:mb-12 mt-8 md:mt-16 px-4 text-center"
+          className="text-center mt-10 pb-6"
         >
-          <h2 className="text-xl md:text-3xl lg:text-5xl font-black space-grotesk mb-4 md:mb-6">
-            <span className="text-orange-400 animate-neon-flicker">WHEN POWELL CUTS, WE MOON</span>
-          </h2>
-          <p className="text-base md:text-lg lg:text-xl max-w-3xl mx-auto leading-relaxed inter font-bold mb-4">
-            <span className="gradient-text">THE ULTIMATE MEME TOKEN CHAOS</span> 🚀<br/>
-            <span className="text-yellow-400 font-bold">ARCADE • MAYHEM • MOON MISSION</span>
+          <p 
+            className="text-white text-sm md:text-base lg:text-lg font-mono tracking-wide"
+            style={{
+              textShadow: `
+                0 0 10px rgba(255, 255, 255, 0.8),
+                0 0 20px rgba(255, 255, 255, 0.6),
+                0 0 30px rgba(255, 255, 255, 0.4)
+              `
+            }}
+          >
+            Cut slashes. Rate defends. The Index decides.
           </p>
         </motion.div>
 
@@ -142,50 +147,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
         >
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 hover:from-yellow-300 hover:via-red-400 hover:to-pink-400 text-black font-black text-lg px-8 py-4 rounded-2xl shadow-lg chaos-glow transition-all duration-300 press-start animate-chaos-pulse"
-          >
-            <ExternalLink className="mr-2 h-5 w-5" />
-            BUY CHAOS
-          </Button>
-          
-          <Button
-            size="lg"
-            className="bg-transparent border-4 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-black text-lg px-8 py-4 rounded-2xl shadow-lg hover:chaos-glow transition-all duration-300 press-start animate-neon-flicker"
-          >
-            <Users className="mr-2 h-5 w-5" />
-            JOIN MAYHEM
-          </Button>
+          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style={{boxShadow: '0 0 20px rgba(239, 68, 68, 0.5)'}}>
+            PLAY TO WIN
+          </button>
+          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style={{boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)'}}>
+            CHOOSE YOUR SIDE
+          </button>
         </motion.div>
 
-        {/* Chaotic Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
-        >
-          {[
-            { label: 'CHAOS CAP', value: '$420K', color: 'text-yellow-400', bg: 'from-yellow-400/20 to-orange-500/20' },
-            { label: 'DEGENS', value: '6,969', color: 'text-red-400', bg: 'from-red-400/20 to-pink-500/20' },
-            { label: 'MAYHEM VOL', value: '$1.2M', color: 'text-pink-400', bg: 'from-pink-400/20 to-purple-500/20' },
-            { label: 'POWELL RAGE', value: 'MAX', color: 'text-green-400', bg: 'from-green-400/20 to-cyan-500/20' },
-          ].map((stat, index) => (
-            <motion.div 
-              key={index} 
-              className={`neon-card p-4 rounded-xl text-center bg-gradient-to-br ${stat.bg} animate-chaos-pulse`}
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <div className={`text-2xl font-black ${stat.color} press-start animate-neon-flicker`}>
-                {stat.value}
-              </div>
-              <div className="text-xs text-gray-400 mt-2 orbitron font-bold">{stat.label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );
