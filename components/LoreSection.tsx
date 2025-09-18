@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function LoreSection() {
   return (
@@ -86,10 +87,13 @@ export default function LoreSection() {
             <div className="relative w-full rounded-xl overflow-hidden bg-black border-4 border-yellow-400 flex flex-col flex-1">
               {/* Lore Image */}
               <div className="relative">
-                <img 
+                <Image 
                   src="/lore-image.png"
                   alt="The Narrative Battlefield"
+                  width={600}
+                  height={400}
                   className="w-full h-auto object-contain"
+                  loading="lazy"
                 />
                 
                 {/* Overlay effects */}

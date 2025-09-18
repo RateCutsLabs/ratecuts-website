@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function LogosMarquee() {
   const logos = [
@@ -35,11 +36,14 @@ export default function LogosMarquee() {
               }}
             >
               {logos.map((logo, index) => (
-                <div key={`first-${index}`} className="flex items-center justify-center my-4">
-                  <img 
+                <div key={`first-${index}`} className="flex items-center justify-center my-6">
+                  <Image 
                     src={logo.src} 
                     alt={logo.alt}
+                    width={120}
+                    height={64}
                     className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    loading="lazy"
                   />
                 </div>
               ))}
@@ -56,11 +60,14 @@ export default function LogosMarquee() {
               }}
             >
               {logos.map((logo, index) => (
-                <div key={`second-${index}`} className="flex items-center justify-center my-4">
-                  <img 
+                <div key={`second-${index}`} className="flex items-center justify-center my-6">
+                  <Image 
                     src={logo.src} 
                     alt={logo.alt}
+                    width={120}
+                    height={64}
                     className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    loading="lazy"
                   />
                 </div>
               ))}

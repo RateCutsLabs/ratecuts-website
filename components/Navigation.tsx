@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Twitter, Send, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -113,11 +114,15 @@ export default function Navigation() {
             transition={{ duration: 1 }}
           >
             <a href="/" className="block text-center">
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="$RATECUTS Logo" 
+                width={200}
+                height={200}
                 className="h-12 md:h-20 lg:h-20 mx-auto object-contain"
                 style={{WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale'}}
+                loading="eager"
+                priority
               />
             </a>
           </motion.div>

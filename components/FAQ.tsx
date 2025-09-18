@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 
@@ -114,10 +115,13 @@ export default function FAQ() {
               transition={{ duration: 0.8 }}
               className="relative max-w-lg"
             >
-              <img 
+              <Image 
                 src="/faq.png" 
                 alt="FAQ Illustration" 
+                width={500}
+                height={500}
                 className="w-full h-auto object-cover max-h-[500px]"
+                loading="lazy"
               />
               
               {/* Decorative elements */}

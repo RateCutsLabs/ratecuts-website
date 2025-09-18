@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import PowellIndex from '@/components/PowellIndex';
+import Image from 'next/image';
 
 export default function ComingSoon() {
   return (
@@ -48,10 +49,7 @@ export default function ComingSoon() {
               }}
               transition={{ duration: 6, repeat: Infinity }}
             >
-              <motion.img
-                src="/rate-character-image.png"
-                alt="Rate Character"
-                className="w-full h-full object-contain"
+              <motion.div
                 animate={{
                   opacity: [0.8, 1, 0.8],
                   filter: [
@@ -61,7 +59,17 @@ export default function ComingSoon() {
                   ]
                 }}
                 transition={{ duration: 0.5, repeat: Infinity }}
-              />
+                className="w-full h-full"
+              >
+                <Image
+                  src="/rate-character-image.png"
+                  alt="Rate Character"
+                  fill
+                  className="object-contain"
+                  loading="eager"
+                  priority
+                />
+              </motion.div>
             </motion.div>
             <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-yellow-400 inter mb-1 animate-neon-flicker" style={{textShadow: '0 0 15px rgba(234, 179, 8, 0.9), 0 0 25px rgba(234, 179, 8, 0.7), 0 0 35px rgba(234, 179, 8, 0.5)'}}>Rate Riser</h3>
           </motion.div>
@@ -102,10 +110,7 @@ export default function ComingSoon() {
               }}
               transition={{ duration: 6, repeat: Infinity }}
             >
-              <motion.img
-                src="/cut-character-image.png"
-                alt="Cut Character"
-                className="w-full h-full object-contain"
+              <motion.div
                 animate={{
                   opacity: [0.8, 1, 0.8],
                   filter: [
@@ -115,7 +120,17 @@ export default function ComingSoon() {
                   ]
                 }}
                 transition={{ duration: 0.5, repeat: Infinity }}
-              />
+                className="w-full h-full"
+              >
+                <Image
+                  src="/cut-character-image.png"
+                  alt="Cut Character"
+                  fill
+                  className="object-contain"
+                  loading="eager"
+                  priority
+                />
+              </motion.div>
             </motion.div>
             <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-red-400 space-grotesk mb-1 animate-neon-flicker" style={{textShadow: '0 0 15px rgba(239, 68, 68, 0.9), 0 0 25px rgba(239, 68, 68, 0.7), 0 0 35px rgba(239, 68, 68, 0.5)'}}>Powell Puncher </h3>
           </motion.div>

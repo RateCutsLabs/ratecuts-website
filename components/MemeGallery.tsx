@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Download, Share2 } from 'lucide-react';
+import Image from 'next/image';
 
 export default function MemeGallery() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
@@ -348,10 +349,12 @@ export default function MemeGallery() {
                   }}
                 >
                   {/* Actual Meme Image */}
-                  <img 
+                  <Image 
                     src={meme.image}
                     alt={meme.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
                   />
                 </motion.div>
               ))}
@@ -423,10 +426,13 @@ export default function MemeGallery() {
                      boxShadow: '0 0 50px rgba(234, 179, 8, 0.5)'
                    }}>
                 {/* Fullscreen Meme Image */}
-                <img 
+                <Image 
                   src={lightboxImage}
                   alt="Fullscreen meme"
+                  width={800}
+                  height={600}
                   className="w-full h-full object-contain max-h-[70vh]"
+                  loading="lazy"
                 />
               </div>
               {/* Action Buttons */}

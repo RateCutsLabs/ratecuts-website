@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 
 export default function Tokenomics() {
@@ -192,17 +193,20 @@ export default function Tokenomics() {
           </div>
 
           {/* Central Token Allocation Image - Without Box */}
-          <motion.div
+          <motion.div 
             ref={centerRef}
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             className="my-0 relative z-10"
           >
-            <img 
+            <Image 
               src="/token-allocation.png"
               alt="Token Allocation Chart"
+              width={320}
+              height={320}
               className="w-64 h-64 sm:w-80 sm:h-80 object-contain"
+              loading="lazy"
             />
           </motion.div>
 

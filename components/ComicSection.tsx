@@ -1,8 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ComicSection() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -72,10 +73,13 @@ export default function ComicSection() {
             <div className="relative w-full max-w-md mx-auto rounded-xl overflow-hidden bg-black border-4 border-yellow-400 flex flex-col flex-1">
               {/* Comic Page Image */}
               <div className="relative">
-                <img 
+                <Image 
                   src={comicPages[currentPage].image}
                   alt={comicPages[currentPage].title}
+                  width={500}
+                  height={700}
                   className="w-full h-auto object-contain"
+                  loading="lazy"
                 />
                 
                 {/* Navigation Arrows */}

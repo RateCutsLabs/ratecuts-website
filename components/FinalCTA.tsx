@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function FinalCTA() {
   return (
@@ -23,10 +24,12 @@ export default function FinalCTA() {
               <div className="w-full h-full flex items-center justify-center relative">
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="relative z-10 w-full h-full flex items-center justify-center">
-                  <img 
+                  <Image 
                     src="/fight night.png"
                     alt="Fight Night Arena"
-                    className="w-full h-full object-cover"
+                    fill
+                    className="object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>

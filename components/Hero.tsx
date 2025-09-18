@@ -1,9 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Users } from 'lucide-react';
 import PowellIndex from '@/components/PowellIndex';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -47,29 +46,36 @@ export default function Hero() {
               y: { duration: 5, repeat: Infinity, delay: 2 }
             }}
           >
-            <motion.div 
-              className="w-28 h-28 sm:w-32 sm:h-32 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
-              animate={{
-                scale: [1, 1.1, 1],
-                rotate: [0, 5, -5, 0]
-              }}
-              transition={{ duration: 6, repeat: Infinity }}
-            >
-              <motion.img
-                src="/rate-character-image.png"
-                alt="Rate Character"
-                className="w-full h-full object-contain"
+            <motion.div
+                className="w-28 h-28 sm:w-32 sm:h-32 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
                 animate={{
-                  opacity: [0.8, 1, 0.8],
-                  filter: [
-                    'drop-shadow(0 0 20px rgba(255, 20, 147, 0.3))',
-                    'drop-shadow(0 0 40px rgba(255, 20, 147, 0.6))',
-                    'drop-shadow(0 0 20px rgba(255, 20, 147, 0.3))'
-                  ]
+                  scale: [1, 1.1, 1],
+                  rotate: [0, 5, -5, 0]
                 }}
-                transition={{ duration: 0.5, repeat: Infinity }}
-              />
-            </motion.div>
+                transition={{ duration: 6, repeat: Infinity }}
+              >
+                <motion.div
+                  animate={{
+                    opacity: [0.8, 1, 0.8],
+                    filter: [
+                      'drop-shadow(0 0 20px rgba(255, 20, 147, 0.3))',
+                      'drop-shadow(0 0 40px rgba(255, 20, 147, 0.6))',
+                      'drop-shadow(0 0 20px rgba(255, 20, 147, 0.3))'
+                    ]
+                  }}
+                  transition={{ duration: 0.5, repeat: Infinity }}
+                  className="w-full h-full"
+                >
+                  <Image
+                    src="/rate-character-image.png"
+                    alt="Rate Character"
+                    fill
+                    className="object-contain"
+                    loading="eager"
+                    priority
+                  />
+                </motion.div>
+              </motion.div>
             <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-yellow-400 inter mb-1 animate-neon-flicker" style={{textShadow: '0 0 15px rgba(234, 179, 8, 0.9), 0 0 25px rgba(234, 179, 8, 0.7), 0 0 35px rgba(234, 179, 8, 0.5)'}}>Rate Riser</h3>
           </motion.div>
 
@@ -105,10 +111,7 @@ export default function Hero() {
               }}
               transition={{ duration: 6, repeat: Infinity }}
             >
-              <motion.img
-                src="/cut-character-image.png"
-                alt="Cut Character"
-                className="w-full h-full object-contain"
+              <motion.div
                 animate={{
                   opacity: [0.8, 1, 0.8],
                   filter: [
@@ -118,7 +121,17 @@ export default function Hero() {
                   ]
                 }}
                 transition={{ duration: 0.5, repeat: Infinity }}
-              />
+                className="w-full h-full"
+              >
+                <Image
+                  src="/cut-character-image.png"
+                  alt="Cut Character"
+                  fill
+                  className="object-contain"
+                  loading="eager"
+                  priority
+                />
+              </motion.div>
             </motion.div>
             <h3 className="text-xs sm:text-sm md:text-lg lg:text-xl font-bold text-red-400 space-grotesk mb-1 animate-neon-flicker" style={{textShadow: '0 0 15px rgba(239, 68, 68, 0.9), 0 0 25px rgba(239, 68, 68, 0.7), 0 0 35px rgba(239, 68, 68, 0.5)'}}>Powell Puncher</h3>
           </motion.div>

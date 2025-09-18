@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function TheFighters() {
   return (
@@ -67,10 +68,13 @@ export default function TheFighters() {
                   {/* Character Image */}
                   <div className="relative mb-6">
                     <div className="absolute inset-0 bg-red-400 rounded-full blur-lg opacity-30 animate-pulse"></div>
-                    <img 
+                    <Image 
                       src="/fight-cut.png"
                       alt="Cut Fighter"
+                      width={160}
+                      height={160}
                       className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
 
@@ -122,10 +126,13 @@ export default function TheFighters() {
                 <div className="relative group">
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
                   <div className="relative bg-gradient-to-br from-yellow-500/30 to-yellow-600/30 border-3 border-yellow-400 rounded-xl p-6 text-center backdrop-blur-sm">
-                    <img 
+                    <Image 
                       src="/Powell-Index.png"
                       alt="Powell Index"
+                      width={240}
+                      height={240}
                       className="w-48 h-48 md:w-60 md:h-60 mx-auto object-contain mb-4 drop-shadow-2xl"
+                      loading="lazy"
                     />
                     <h4 className="text-2xl md:text-3xl font-black text-yellow-400 mb-2">
                       POWELL INDEX
@@ -152,10 +159,13 @@ export default function TheFighters() {
                   {/* Character Image */}
                   <div className="relative mb-6">
                     <div className="absolute inset-0 bg-orange-400 rounded-full blur-lg opacity-30 animate-pulse"></div>
-                    <img 
+                    <Image 
                       src="/fight-rate.png"
                       alt="Rate Fighter"
+                      width={160}
+                      height={160}
                       className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
 
