@@ -2,7 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, TrendingDown, Zap, Flame } from 'lucide-react';
+import { TrendingUp, TrendingDown, Zap, Flame, LucideIcon } from 'lucide-react';
+
+interface TickerItem {
+  label: string;
+  value: string;
+  color: string;
+  icon: LucideIcon | null;
+  glow: string;
+}
 
 export default function LiveTicker() {
   const [price, setPrice] = useState(0.00042);
@@ -21,54 +29,26 @@ export default function LiveTicker() {
 
     return () => clearInterval(interval);
   }, []);
-
-  const tickerData = [
+ 
+  const tickerData: TickerItem[] = [
     { 
-      label: '$RATECUTS', 
-      value: `$${price.toFixed(6)}`, 
+      label: '$RATECUT', 
+      value: `🚀 Join our  twitter and telegram community  Now 💬`, 
       color: 'text-yellow-400',
       icon: null,
       glow: 'shadow-yellow-400/50'
     },
     { 
-      label: 'CHAOS CHANGE', 
-      value: `${change24h > 0 ? '+' : ''}${change24h.toFixed(1)}%`, 
-      color: change24h > 0 ? 'text-green-400' : 'text-red-400',
-      icon: change24h > 0 ? TrendingUp : TrendingDown,
-      glow: change24h > 0 ? 'shadow-green-400/50' : 'shadow-red-400/50'
-    },
-    { 
-      label: 'MAYHEM VOL', 
-      value: `$${(volume / 1000).toFixed(0)}K`, 
-      color: 'text-cyan-400',
-      icon: Zap,
-      glow: 'shadow-cyan-400/50'
-    },
-    { 
-      label: 'CHAOS CAP', 
-      value: `$${(marketCap / 1000).toFixed(0)}K`, 
-      color: 'text-pink-400',
+     label: '$RATECUT',
+      value: `🚀 Join our  twitter and telegram community  Now 💬`, 
+      color: 'text-green-400',
       icon: null,
-      glow: 'shadow-pink-400/50'
-    },
-    { 
-      label: 'DEGENS', 
-      value: '6,969', 
-      color: 'text-orange-400',
-      icon: null,
-      glow: 'shadow-orange-400/50'
-    },
-    { 
-      label: 'POWELL RAGE', 
-      value: '🔥 MAX CHAOS', 
-      color: 'text-red-400',
-      icon: Flame,
-      glow: 'shadow-red-400/50'
+      glow: 'shadow-green-400/50'
     },
   ];
 
   return (
-    <div className="bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-6 overflow-hidden relative">
+    <div id="live-ticker" className="relative bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-3 mt-2 overflow-hidden">
       {/* Chaotic Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/5 via-red-500/5 to-pink-500/5" />
       
@@ -97,7 +77,7 @@ export default function LiveTicker() {
       
       {/* Scrolling Ticker */}
       <motion.div
-        className="flex whitespace-nowrap relative z-10"
+        className="flex whitespace-nowrap relative z-10 mt-1"
         animate={{ x: [0, -2400] }}
         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       >
@@ -116,8 +96,6 @@ export default function LiveTicker() {
                   </span>
                 </div>
                 <div className="flex items-center mx-4">
-                  <span className="text-yellow-400 mx-2 text-2xl animate-pulse">⚡</span>
-                  <span className="text-red-400 mx-2 text-2xl animate-pulse">🔥</span>
                   <span className="text-pink-400 mx-2 text-2xl animate-pulse">💥</span>
                 </div>
               </div>
