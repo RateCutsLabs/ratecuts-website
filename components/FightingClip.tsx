@@ -93,6 +93,7 @@ export default function FightingClip() {
                   className="w-full h-full object-cover"
                   controls
                   autoPlay
+                  muted
                   poster="/placeholder-video-poster.jpg"
                 >
                   <source src="/fight-video.MP4" type="video/mp4" />

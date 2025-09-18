@@ -61,7 +61,7 @@ export default function HowToPlay() {
             className="text-5xl md:text-7xl font-black mb-8 relative z-10"
           >
             <span className="inline-block gradient-text">
-              🎮 HOW TO PLAY 🎮
+              UFC - ULTIMATE FED CUTS
             </span>
           </motion.h2>
           

@@ -21,7 +21,7 @@ export default function LoreSection() {
           </div>
           
           <h2 className="text-5xl md:text-7xl font-black mb-8 relative z-10 gradient-text">
-            ⚡ EPIC LORE ⚡
+            ⚡ The Narrative ⚡
           </h2>
           
           <div className="flex items-center justify-center gap-4 mb-8">
@@ -31,26 +31,72 @@ export default function LoreSection() {
           </div>
         </motion.div>
 
-        {/* Main Lore Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20"
-        >
-          {/* Epic Lore Image */}
+        {/* Main Lore Content - Box Layout */}
+        <div className="grid md:grid-cols-2 gap-12 items-stretch mb-20">
+          {/* Left Side - Narrative Text */}
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="flex justify-center lg:order-1"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex"
           >
-            <div className="relative max-w-lg w-full">
-              {/* Glowing border effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 rounded-xl blur-sm opacity-75 animate-pulse"></div>
-              
-              <div className="relative bg-black rounded-xl overflow-hidden border-4 border-yellow-400">
+            {/* All Narrative Content in Rounded Box */}
+            <div className="bg-gradient-to-br from-black/80 to-gray-900/80 border-4 border-yellow-400 rounded-xl p-6 shadow-2xl backdrop-blur-sm max-w-md mx-auto flex flex-col justify-center flex-1" style={{
+              boxShadow: '0 0 30px rgba(234, 179, 8, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.5)'
+            }}>
+              {/* Main Story */}
+              <div className="text-center space-y-6">
+                <p className="text-xl md:text-2xl text-yellow-400 font-bold" style={{
+                  textShadow: '0 0 10px rgba(234, 179, 8, 0.8)'
+                }}>
+                  2025: Rates dominate headlines.
+                </p>
+                
+                <p className="text-lg md:text-xl text-blue-300 font-semibold">
+                  Traders sweating. Polymarket degens betting.
+                </p>
+                
+                <p className="text-lg md:text-xl text-gray-300">
+                  No meme coin dared to claim it...
+                </p>
+                
+                <p className="text-xl md:text-2xl text-green-400 font-bold">
+                  until now.
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="flex items-center justify-center my-6">
+                <div className="h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-32"></div>
+                <div className="mx-4 w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                <div className="h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-32"></div>
+              </div>
+
+              {/* Epic finale */}
+              <div className="text-center">
+                <p className="text-lg md:text-xl font-black text-white" style={{
+                  textShadow: '0 0 20px rgba(255, 255, 255, 0.8)'
+                }}>
+                  🔥 THE LEGEND BEGINS 🔥
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right Side - Lore Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex"
+          >
+            {/* Main Lore Image Display */}
+            <div className="relative w-full rounded-xl overflow-hidden bg-black border-4 border-yellow-400 flex flex-col flex-1">
+              {/* Lore Image */}
+              <div className="relative">
                 <img 
                   src="/lore-image.png"
-                  alt="Epic Lore Battlefield"
+                  alt="The Narrative Battlefield"
                   className="w-full h-auto object-contain"
                 />
                 
@@ -63,71 +109,16 @@ export default function LoreSection() {
                 <div className="absolute bottom-2 left-2 text-blue-400 text-2xl animate-ping">💎</div>
                 <div className="absolute bottom-2 right-2 text-green-400 text-2xl animate-pulse">⚔️</div>
               </div>
+
+              {/* Image Caption */}
+              <div className="flex justify-center py-3 gap-2 bg-black/20">
+                <span className="text-yellow-400 font-bold text-sm bg-yellow-400/10 px-3 py-1 rounded-full border border-yellow-400/30">
+                  THE BATTLEFIELD AWAITS
+                </span>
+              </div>
             </div>
           </motion.div>
-
-          {/* Epic Story Text */}
-          <div className="text-center lg:text-left lg:order-2 relative">
-            {/* Background glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-red-500/10 blur-xl rounded-xl"></div>
-            
-            <div className="relative z-10 text-xl md:text-2xl leading-relaxed space-y-8">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex items-center gap-4"
-              >
-                {/* <span className="text-3xl">📅</span> */}
-                <p className="text-yellow-400 font-bold text-2xl">
-                  2025: Rates dominate headlines.
-                </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                className="flex items-center gap-4"
-              >
-                {/* <span className="text-3xl">💦</span> */}
-                <p className="text-blue-300">
-                  Traders sweating. <span className="text-red-400 font-bold">Polymarket degens betting.</span>
-                </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                className="flex items-center gap-4"
-              >
-                {/* <span className="text-3xl animate-pulse">🚀</span> */}
-                <p className="text-gray-300">
-                  No meme coin dared to claim it… 
-                  <span className="text-green-400 font-bold text-2xl">
-                    until now.
-                  </span>
-                </p>
-              </motion.div>
-              
-              {/* Epic CTA */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-                className="pt-6"
-              >
-                <div className="inline-block relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-red-500 to-yellow-500 blur-md opacity-50   "></div>
-                  <p className="relative text-3xl font-black tracking-wider text-white">
-                    🔥 THE LEGEND BEGINS 🔥
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </motion.div>
+        </div>
 
         {/* The Fighters Section */}
         <motion.div
@@ -253,7 +244,7 @@ export default function LoreSection() {
                       <img 
                         src="/Powell-Index.png"
                         alt="Powell Index"
-                        className="w-24 h-24 md:w-32 md:h-32 mx-auto object-contain mb-4 drop-shadow-2xl"
+                        className="w-48 h-48 md:w-60 md:h-60 mx-auto object-contain mb-4 drop-shadow-2xl"
                       />
                       <h4 className="text-2xl md:text-3xl font-black text-yellow-400 mb-2">
                         POWELL INDEX

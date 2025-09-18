@@ -6,17 +6,97 @@ import { useState } from 'react';
 export default function MemeGallery() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
-  // Placeholder meme data - you'll replace with actual memes
-  const memes = Array.from({ length: 24 }, (_, index) => ({
-    id: index + 1,
-    title: `Meme ${index + 1}`,
-    image: `/meme-placeholder-${index + 1}.png`, // Replace with actual meme paths
-    description: `Epic RateCuts meme #${index + 1}`
-  }));
+  // Actual meme data from artwork folder
+  const memes = [
+    {
+      id: 1,
+      title: "Debatte im Boxring",
+      image: "/artwork/Debatte im Boxring_ RATE vs. CUT.png",
+      description: "RATE vs CUT in intense debate"
+    },
+    {
+      id: 2,
+      title: "Energiesturm im Boxring",
+      image: "/artwork/Energiesturm im Boxring.png",
+      description: "Energy storm in the boxing ring"
+    },
+    {
+      id: 3,
+      title: "Kampf der Energie-Ikonen",
+      image: "/artwork/Kampf der Energie-Ikonen.png",
+      description: "Battle of energy icons"
+    },
+    {
+      id: 4,
+      title: "Kampf der Energieangriffe",
+      image: "/artwork/Kampf der Energieangriffe.png",
+      description: "Energy attack showdown"
+    },
+    {
+      id: 5,
+      title: "Kampf der Energien auf dem Powell Index",
+      image: "/artwork/Kampf der Energien auf dem Powell Index.png",
+      description: "Energy battle on Powell Index"
+    },
+    {
+      id: 6,
+      title: "Kampf der Energien im Boxring",
+      image: "/artwork/Kampf der Energien im Boxring.png",
+      description: "Energy fighters in boxing ring"
+    },
+    {
+      id: 7,
+      title: "Kampf der Titanen",
+      image: "/artwork/Kampf der Titanen_ RATE vs CUT.png",
+      description: "Battle of titans: RATE vs CUT"
+    },
+    {
+      id: 8,
+      title: "Kampf der kräftigen Kämpfer",
+      image: "/artwork/Kampf der kräftigen Kämpfer.png",
+      description: "Battle of powerful fighters"
+    },
+    {
+      id: 9,
+      title: "Konfrontation der Energien beim Powell Index",
+      image: "/artwork/Konfrontation der Energien beim Powell Index.png",
+      description: "Energy confrontation at Powell Index"
+    },
+    {
+      id: 10,
+      title: "Neon Boxkampf im digitalen Ring",
+      image: "/artwork/Neon Boxkampf im digitalen Ring.png",
+      description: "Neon boxing in digital ring"
+    },
+    {
+      id: 11,
+      title: "Powell Index und Entscheidungspunkte",
+      image: "/artwork/Powell Index und Entscheidungspunkte.png",
+      description: "Powell Index decision points"
+    },
+    {
+      id: 12,
+      title: "ChatGPT Image 1",
+      image: "/artwork/ChatGPT Image 14. Sept. 2025, 09_55_43.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 13,
+      title: "ChatGPT Image 2",
+      image: "/artwork/ChatGPT Image 14. Sept. 2025, 09_55_53.png",
+      description: "AI generated meme content"
+    },
+    {
+      id: 14,
+      title: "ChatGPT Image 3",
+      image: "/artwork/ChatGPT Image 14. Sept. 2025, 09_56_08.png",
+      description: "AI generated viral content"
+    }
+  ];
 
-  // Split memes into rows for parallax effect
-  const topRowMemes = memes.filter((_, index) => index % 2 === 0);
-  const bottomRowMemes = memes.filter((_, index) => index % 2 === 1);
+  // Split memes into two rows
+  const topRowMemes = memes.slice(0, Math.ceil(memes.length / 2));
+  const bottomRowMemes = memes.slice(Math.ceil(memes.length / 2));
 
   return (
     <section className="relative py-20 px-4 overflow-hidden">
@@ -50,71 +130,71 @@ export default function MemeGallery() {
           </div>
         </motion.div>
 
-        {/* Parallax Meme Gallery */}
+        {/* Two Row Animated Meme Gallery */}
         <div className="space-y-8">
           {/* Top Row - Scrolls Right */}
-          <motion.div
-            className="flex gap-4"
-            animate={{ x: [0, -1200] }}
-            transition={{
-              duration: 30,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          >
-            {[...topRowMemes, ...topRowMemes].map((meme, index) => (
-              <motion.div
-                key={`top-${index}`}
-                whileHover={{ scale: 1.05, zIndex: 10 }}
-                className="flex-shrink-0 w-64 h-64 bg-black border-2 border-yellow-400/30 rounded-xl overflow-hidden cursor-pointer group"
-                onClick={() => setLightboxImage(meme.image)}
-                style={{
-                  boxShadow: '0 0 20px rgba(234, 179, 8, 0.2)'
-                }}
-              >
-                {/* Placeholder Meme Content */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-400/10 to-red-500/10 group-hover:from-yellow-400/20 group-hover:to-red-500/20 transition-all duration-300">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">🎭</div>
-                    <p className="text-yellow-400 font-bold text-sm">{meme.title}</p>
-                    <p className="text-gray-400 text-xs mt-1">{meme.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-4 w-max"
+              animate={{ x: [0, -((topRowMemes.length * 272) / 2)] }}
+              transition={{
+                duration: 20,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...topRowMemes, ...topRowMemes].map((meme, index) => (
+                <motion.div
+                  key={`top-${meme.id}-${index}`}
+                  whileHover={{ scale: 1.05, zIndex: 10 }}
+                  className="flex-shrink-0 w-64 h-64 bg-black border-2 border-yellow-400/30 rounded-xl overflow-hidden cursor-pointer group"
+                  onClick={() => setLightboxImage(meme.image)}
+                  style={{
+                    boxShadow: '0 0 20px rgba(234, 179, 8, 0.2)'
+                  }}
+                >
+                  {/* Actual Meme Image */}
+                  <img 
+                    src={meme.image}
+                    alt={meme.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
 
           {/* Bottom Row - Scrolls Left */}
-          <motion.div
-            className="flex gap-4"
-            animate={{ x: [-1200, 0] }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          >
-            {[...bottomRowMemes, ...bottomRowMemes].map((meme, index) => (
-              <motion.div
-                key={`bottom-${index}`}
-                whileHover={{ scale: 1.05, zIndex: 10 }}
-                className="flex-shrink-0 w-64 h-64 bg-black border-2 border-red-400/30 rounded-xl overflow-hidden cursor-pointer group"
-                onClick={() => setLightboxImage(meme.image)}
-                style={{
-                  boxShadow: '0 0 20px rgba(239, 68, 68, 0.2)'
-                }}
-              >
-                {/* Placeholder Meme Content */}
-                <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-400/10 to-pink-500/10 group-hover:from-red-400/20 group-hover:to-pink-500/20 transition-all duration-300">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">⚔️</div>
-                    <p className="text-red-400 font-bold text-sm">{meme.title}</p>
-                    <p className="text-gray-400 text-xs mt-1">{meme.description}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex gap-4 w-max"
+              animate={{ x: [-((bottomRowMemes.length * 272) / 2), 0] }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {[...bottomRowMemes, ...bottomRowMemes].map((meme, index) => (
+                <motion.div
+                  key={`bottom-${meme.id}-${index}`}
+                  whileHover={{ scale: 1.05, zIndex: 10 }}
+                  className="flex-shrink-0 w-64 h-64 bg-black border-2 border-red-400/30 rounded-xl overflow-hidden cursor-pointer group"
+                  onClick={() => setLightboxImage(meme.image)}
+                  style={{
+                    boxShadow: '0 0 20px rgba(239, 68, 68, 0.2)'
+                  }}
+                >
+                  {/* Actual Meme Image */}
+                  <img 
+                    src={meme.image}
+                    alt={meme.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
 
         {/* Gallery Instructions */}
@@ -125,7 +205,7 @@ export default function MemeGallery() {
           className="text-center mt-12"
         >
           <p className="text-gray-400 text-sm">
-            Click any meme for fullscreen chaos • Gallery auto-scrolls with parallax effect
+            Click any meme for fullscreen chaos
           </p>
         </motion.div>
 
@@ -148,14 +228,12 @@ export default function MemeGallery() {
                    style={{
                      boxShadow: '0 0 50px rgba(234, 179, 8, 0.5)'
                    }}>
-                {/* Placeholder fullscreen meme */}
-                <div className="aspect-square flex items-center justify-center bg-gradient-to-br from-yellow-400/20 to-red-500/20">
-                  <div className="text-center text-white">
-                    <div className="text-8xl mb-4">🎭</div>
-                    <p className="text-2xl font-bold">FULLSCREEN MEME</p>
-                    <p className="text-gray-400 mt-2">Epic chaos content here</p>
-                  </div>
-                </div>
+                {/* Fullscreen Meme Image */}
+                <img 
+                  src={lightboxImage}
+                  alt="Fullscreen meme"
+                  className="w-full h-full object-contain max-h-[80vh]"
+                />
               </div>
             </div>
           </motion.div>

@@ -19,40 +19,15 @@ export default function FinalCTA() {
                  style={{
                    boxShadow: '0 0 50px rgba(234, 179, 8, 0.3)'
                  }}>
-              {/* Placeholder for Cut vs Rate in crowded fight-night arena */}
+              {/* Fight Night Arena Image */}
               <div className="w-full h-full flex items-center justify-center relative">
                 <div className="absolute inset-0 bg-black/30" />
-                <div className="relative z-10 text-center">
-                  <div className="flex justify-center items-center gap-8 mb-6">
-                    <motion.div
-                      animate={{ 
-                        x: [0, -10, 0],
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="text-8xl"
-                    >
-                      ✂️
-                    </motion.div>
-                    
-                    <div className="text-6xl text-yellow-400">VS</div>
-                    
-                    <motion.div
-                      animate={{ 
-                        x: [0, 10, 0],
-                        scale: [1, 1.1, 1]
-                      }}
-                      transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-                      className="text-8xl"
-                    >
-                      %🟡
-                    </motion.div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <p className="text-yellow-400 font-bold text-xl mb-2">FIGHT NIGHT ARENA</p>
-                    <p className="text-white text-lg">Crowded with degens, chaos, and Powell Index twitching</p>
-                  </div>
+                <div className="relative z-10 w-full h-full flex items-center justify-center">
+                  <img 
+                    src="/fight night.png"
+                    alt="Fight Night Arena"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>

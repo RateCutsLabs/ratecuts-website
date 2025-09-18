@@ -236,7 +236,7 @@ export default function VisionSection() {
             <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 blur-2xl opacity-30 animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-400 blur-xl opacity-40 animate-pulse"></div>
             
-            {/* Outer border animation */}
+            {/* Outer border animation
             <div className="absolute inset-0 border-4 border-yellow-400 rounded-2xl animate-pulse opacity-60"></div>
             
             <motion.div
@@ -270,7 +270,7 @@ export default function VisionSection() {
                   🇺🇸
                 </motion.div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </motion.div>
       </div>

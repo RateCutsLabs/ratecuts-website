@@ -22,7 +22,7 @@ export default function Home() {
       <LoreSection />
       <HowToPlay />
       <Tokenomics />
-      <VisionSection />
+      {/* <VisionSection /> */}
       <MemeGallery />
       <Roadmap />
       {/* <CommunitySection /> */}

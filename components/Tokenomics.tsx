@@ -143,11 +143,11 @@ export default function Tokenomics() {
 
           <div className="text-center mt-8">
             <p className="text-lg text-green-400 font-bold mb-2">
-              👉 Full transparency. Fair launch. Chaos only.
+              Full transparency. Fair launch. Chaos only.
             </p>
-            <p className="text-yellow-400 italic text-lg">
+            {/* <p className="text-yellow-400 italic text-lg">
               "Thank you for your attention to this matter." – Donald J. Trump
-            </p>
+            </p> */}
           </div>
         </motion.div>
       </div>
