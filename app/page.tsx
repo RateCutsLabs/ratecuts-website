@@ -86,9 +86,22 @@ export default function Home() {
           transition={{ duration: 1 }}
           className="mb-6 md:mb-8 lg:mb-16 relative"
         >
-          <h1 className="text-6xl mt-3 sm:text-4xl md:text-4xl lg:text-6xl xl:text-8xl font-black mb-4 md:mb-6 orbitron">
-            <span className="gradient-text animate-neon-flicker">$RATECUTS</span>
-          </h1>
+          <div className="flex justify-center items-center mb-4 md:mb-6">
+            <motion.img
+              src="/comingsoon-logo.png"
+              alt="$RATECUTS Coming Soon"
+              className="h-24 sm:h-24 md:h-32 lg:h-40 xl:h-48 w-auto object-contain"
+              animate={{
+                opacity: [0.8, 1, 0.8],
+                filter: [
+                  'drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))',
+                  'drop-shadow(0 0 40px rgba(255, 255, 255, 0.6))',
+                  'drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))'
+                ]
+              }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
+          </div>
           <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8">
             <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-8 md:max-w-16 lg:max-w-32 animate-pulse" />
             <span className="text-cyan-400 text-xs md:text-sm font-bold tracking-wider uppercase space-grotesk animate-neon-flicker">Rate vs Cut</span>
