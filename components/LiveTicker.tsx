@@ -2,7 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { TrendingUp, TrendingDown, Zap, Flame } from 'lucide-react';
+import { TrendingUp, TrendingDown, Zap, Flame, LucideIcon } from 'lucide-react';
+
+interface TickerItem {
+  label: string;
+  value: string;
+  color: string;
+  icon: LucideIcon | null;
+  glow: string;
+}
 
 export default function LiveTicker() {
   const [price, setPrice] = useState(0.00042);
@@ -22,7 +30,7 @@ export default function LiveTicker() {
     return () => clearInterval(interval);
   }, []);
  
-  const tickerData = [
+  const tickerData: TickerItem[] = [
     { 
       label: '$RATECUT', 
       value: `🚀 Join our  twitter and telegram community  Now 💬`, 
@@ -88,8 +96,6 @@ export default function LiveTicker() {
                   </span>
                 </div>
                 <div className="flex items-center mx-4">
-                  {/* <span className="text-yellow-400 mx-2 text-2xl animate-pulse">⚡</span>
-                  <span className="text-red-400 mx-2 text-2xl animate-pulse">🔥</span> */}
                   <span className="text-pink-400 mx-2 text-2xl animate-pulse">💥</span>
                 </div>
               </div>
