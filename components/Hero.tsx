@@ -73,6 +73,8 @@ export default function Hero() {
                     className="object-contain"
                     loading="eager"
                     priority
+                    quality={75}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </motion.div>
               </motion.div>
@@ -130,6 +132,8 @@ export default function Hero() {
                   className="object-contain"
                   loading="eager"
                   priority
+                  quality={75}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </motion.div>
             </motion.div>

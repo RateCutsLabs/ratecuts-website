@@ -122,6 +122,7 @@ export default function FAQ() {
                 height={500}
                 className="w-full h-auto object-cover max-h-[500px]"
                 loading="lazy"
+                quality={75}
               />
               
               {/* Decorative elements */}

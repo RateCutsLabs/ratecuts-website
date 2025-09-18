@@ -75,6 +75,7 @@ export default function TheFighters() {
                       height={160}
                       className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-300"
                       loading="lazy"
+                      quality={75}
                     />
                   </div>
 
@@ -133,6 +134,7 @@ export default function TheFighters() {
                       height={240}
                       className="w-48 h-48 md:w-60 md:h-60 mx-auto object-contain mb-4 drop-shadow-2xl"
                       loading="lazy"
+                      quality={75}
                     />
                     <h4 className="text-2xl md:text-3xl font-black text-yellow-400 mb-2">
                       POWELL INDEX
@@ -166,6 +168,7 @@ export default function TheFighters() {
                       height={160}
                       className="relative w-32 h-32 md:w-40 md:h-40 mx-auto object-contain drop-shadow-2xl group-hover:scale-110 transition-transform duration-300"
                       loading="lazy"
+                      quality={75}
                     />
                   </div>
 

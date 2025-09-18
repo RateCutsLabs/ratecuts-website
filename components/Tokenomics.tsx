@@ -207,6 +207,7 @@ export default function Tokenomics() {
               height={320}
               className="w-64 h-64 sm:w-80 sm:h-80 object-contain"
               loading="lazy"
+              quality={75}
             />
           </motion.div>
 

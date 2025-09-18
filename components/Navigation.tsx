@@ -123,6 +123,7 @@ export default function Navigation() {
                 style={{WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale'}}
                 loading="eager"
                 priority
+                quality={80}
               />
             </a>
           </motion.div>

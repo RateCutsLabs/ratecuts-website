@@ -44,6 +44,7 @@ export default function LogosMarquee() {
                     height={64}
                     className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     loading="lazy"
+                    quality={70}
                   />
                 </div>
               ))}
@@ -68,6 +69,7 @@ export default function LogosMarquee() {
                     height={64}
                     className="h-12 md:h-16 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     loading="lazy"
+                    quality={70}
                   />
                 </div>
               ))}

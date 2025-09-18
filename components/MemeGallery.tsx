@@ -342,7 +342,7 @@ export default function MemeGallery() {
                 <motion.div
                   key={`top-${meme.id}-${index}`}
                   whileHover={{ scale: 1.05, zIndex: 10 }}
-                  className="flex-shrink-0 w-40 h-40 md:w-64 md:h-64 bg-black border-2 border-yellow-400/30 rounded-xl overflow-hidden cursor-pointer group"
+                  className="flex-shrink-0 w-40 h-40 md:w-64 md:h-64 bg-black border-2 border-yellow-400/30 rounded-xl overflow-hidden cursor-pointer group relative"
                   onClick={() => setLightboxImage(meme.image)}
                   style={{
                     boxShadow: '0 0 15px rgba(234, 179, 8, 0.2)'
@@ -355,6 +355,8 @@ export default function MemeGallery() {
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
+                    quality={70}
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
                   />
                 </motion.div>
               ))}
@@ -376,17 +378,21 @@ export default function MemeGallery() {
                 <motion.div
                   key={`bottom-${meme.id}-${index}`}
                   whileHover={{ scale: 1.05, zIndex: 10 }}
-                  className="flex-shrink-0 w-40 h-40 md:w-64 md:h-64 bg-black border-2 border-red-400/30 rounded-xl overflow-hidden cursor-pointer group"
+                  className="flex-shrink-0 w-40 h-40 md:w-64 md:h-64 bg-black border-2 border-red-400/30 rounded-xl overflow-hidden cursor-pointer group relative"
                   onClick={() => setLightboxImage(meme.image)}
                   style={{
                     boxShadow: '0 0 15px rgba(239, 68, 68, 0.2)'
                   }}
                 >
                   {/* Actual Meme Image */}
-                  <img 
+                  <Image 
                     src={meme.image}
                     alt={meme.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                    quality={70}
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 25vw, 20vw"
                   />
                 </motion.div>
               ))}
@@ -433,6 +439,7 @@ export default function MemeGallery() {
                   height={600}
                   className="w-full h-full object-contain max-h-[70vh]"
                   loading="lazy"
+                  quality={80}
                 />
               </div>
               {/* Action Buttons */}

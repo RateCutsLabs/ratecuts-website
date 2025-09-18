@@ -80,6 +80,7 @@ export default function ComicSection() {
                   height={700}
                   className="w-full h-auto object-contain"
                   loading="lazy"
+                  quality={75}
                 />
                 
                 {/* Navigation Arrows */}

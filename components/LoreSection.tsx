@@ -94,6 +94,7 @@ export default function LoreSection() {
                   height={400}
                   className="w-full h-auto object-contain"
                   loading="lazy"
+                  quality={75}
                 />
                 
                 {/* Overlay effects */}
