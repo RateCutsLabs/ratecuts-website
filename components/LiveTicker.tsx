@@ -21,40 +21,26 @@ export default function LiveTicker() {
 
     return () => clearInterval(interval);
   }, []);
-
+ 
   const tickerData = [
     { 
-      label: 'Market Cap', 
-      value: `$${(marketCap / 1000).toFixed(0)}K`, 
+      label: '$RATECUT', 
+      value: `🚀 Join our  twitter and telegram community  Now 💬`, 
       color: 'text-yellow-400',
       icon: null,
       glow: 'shadow-yellow-400/50'
     },
     { 
-      label: 'Holders', 
-      value: '6,969', 
+     label: '$RATECUT',
+      value: `🚀 Join our  twitter and telegram community  Now 💬`, 
       color: 'text-green-400',
       icon: null,
       glow: 'shadow-green-400/50'
     },
-    { 
-      label: '24h Volume', 
-      value: `$${(volume / 1000000).toFixed(1)}M`, 
-      color: 'text-cyan-400',
-      icon: Zap,
-      glow: 'shadow-cyan-400/50'
-    },
-    { 
-      label: 'Powell Rage', 
-      value: 'MAX', 
-      color: 'text-red-400',
-      icon: Flame,
-      glow: 'shadow-red-400/50'
-    },
   ];
 
   return (
-    <div className="relative bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-6 overflow-hidden">
+    <div id="live-ticker" className="relative bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-3 mt-2 overflow-hidden">
       {/* Chaotic Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/5 via-red-500/5 to-pink-500/5" />
       
@@ -83,7 +69,7 @@ export default function LiveTicker() {
       
       {/* Scrolling Ticker */}
       <motion.div
-        className="flex whitespace-nowrap relative z-10"
+        className="flex whitespace-nowrap relative z-10 mt-1"
         animate={{ x: [0, -2400] }}
         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       >
@@ -102,8 +88,8 @@ export default function LiveTicker() {
                   </span>
                 </div>
                 <div className="flex items-center mx-4">
-                  <span className="text-yellow-400 mx-2 text-2xl animate-pulse">⚡</span>
-                  <span className="text-red-400 mx-2 text-2xl animate-pulse">🔥</span>
+                  {/* <span className="text-yellow-400 mx-2 text-2xl animate-pulse">⚡</span>
+                  <span className="text-red-400 mx-2 text-2xl animate-pulse">🔥</span> */}
                   <span className="text-pink-400 mx-2 text-2xl animate-pulse">💥</span>
                 </div>
               </div>

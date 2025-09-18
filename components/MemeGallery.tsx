@@ -2,95 +2,252 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { Download, Share2 } from 'lucide-react';
 
 export default function MemeGallery() {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
-  // Actual meme data from artwork folder
+  // Updated meme data from Meme Section Website folder
   const memes = [
     {
       id: 1,
-      title: "Debatte im Boxring",
-      image: "/artwork/Debatte im Boxring_ RATE vs. CUT.png",
-      description: "RATE vs CUT in intense debate"
-    },
-    {
-      id: 2,
-      title: "Energiesturm im Boxring",
-      image: "/artwork/Energiesturm im Boxring.png",
-      description: "Energy storm in the boxing ring"
-    },
-    {
-      id: 3,
-      title: "Kampf der Energie-Ikonen",
-      image: "/artwork/Kampf der Energie-Ikonen.png",
-      description: "Battle of energy icons"
-    },
-    {
-      id: 4,
-      title: "Kampf der Energieangriffe",
-      image: "/artwork/Kampf der Energieangriffe.png",
-      description: "Energy attack showdown"
-    },
-    {
-      id: 5,
-      title: "Kampf der Energien auf dem Powell Index",
-      image: "/artwork/Kampf der Energien auf dem Powell Index.png",
-      description: "Energy battle on Powell Index"
-    },
-    {
-      id: 6,
-      title: "Kampf der Energien im Boxring",
-      image: "/artwork/Kampf der Energien im Boxring.png",
-      description: "Energy fighters in boxing ring"
-    },
-    {
-      id: 7,
-      title: "Kampf der Titanen",
-      image: "/artwork/Kampf der Titanen_ RATE vs CUT.png",
-      description: "Battle of titans: RATE vs CUT"
-    },
-    {
-      id: 8,
-      title: "Kampf der kräftigen Kämpfer",
-      image: "/artwork/Kampf der kräftigen Kämpfer.png",
-      description: "Battle of powerful fighters"
-    },
-    {
-      id: 9,
-      title: "Konfrontation der Energien beim Powell Index",
-      image: "/artwork/Konfrontation der Energien beim Powell Index.png",
-      description: "Energy confrontation at Powell Index"
-    },
-    {
-      id: 10,
-      title: "Neon Boxkampf im digitalen Ring",
-      image: "/artwork/Neon Boxkampf im digitalen Ring.png",
-      description: "Neon boxing in digital ring"
-    },
-    {
-      id: 11,
-      title: "Powell Index und Entscheidungspunkte",
-      image: "/artwork/Powell Index und Entscheidungspunkte.png",
-      description: "Powell Index decision points"
-    },
-    {
-      id: 12,
-      title: "ChatGPT Image 1",
-      image: "/artwork/ChatGPT Image 14. Sept. 2025, 09_55_43.png",
+      title: "AI Generated Meme 1",
+      image: "/Meme Section Website/ChatGPT Image 10. Sept. 2025, 11_21_07.png",
       description: "AI generated chaos"
     },
     {
-      id: 13,
-      title: "ChatGPT Image 2",
-      image: "/artwork/ChatGPT Image 14. Sept. 2025, 09_55_53.png",
+      id: 2,
+      title: "AI Generated Meme 2",
+      image: "/Meme Section Website/ChatGPT Image 10. Sept. 2025, 11_29_46.png",
       description: "AI generated meme content"
     },
     {
-      id: 14,
-      title: "ChatGPT Image 3",
-      image: "/artwork/ChatGPT Image 14. Sept. 2025, 09_56_08.png",
+      id: 3,
+      title: "AI Generated Meme 3",
+      image: "/Meme Section Website/ChatGPT Image 14. Sept. 2025, 09_50_54.png",
       description: "AI generated viral content"
+    },
+    {
+      id: 4,
+      title: "AI Generated Meme 4",
+      image: "/Meme Section Website/ChatGPT Image 14. Sept. 2025, 09_54_09.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 5,
+      title: "AI Generated Meme 5",
+      image: "/Meme Section Website/ChatGPT Image 14. Sept. 2025, 09_54_12.png",
+      description: "AI generated content"
+    },
+    {
+      id: 6,
+      title: "AI Generated Meme 6",
+      image: "/Meme Section Website/ChatGPT Image 14. Sept. 2025, 09_55_43.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 7,
+      title: "AI Generated Meme 7",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_49_25.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 8,
+      title: "AI Generated Meme 8",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_49_34.png",
+      description: "AI generated content"
+    },
+    {
+      id: 9,
+      title: "AI Generated Meme 9",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_49_40.png",
+      description: "AI generated viral content"
+    },
+    {
+      id: 10,
+      title: "AI Generated Meme 10",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_49_45.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 11,
+      title: "AI Generated Meme 11",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_49_56.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 12,
+      title: "AI Generated Meme 12",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_50_12.png",
+      description: "AI generated content"
+    },
+    {
+      id: 13,
+      title: "AI Generated Meme 13",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_50_46.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 14,
+      title: "AI Generated Meme 14",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_53_48.png",
+      description: "AI generated viral content"
+    },
+    {
+      id: 15,
+      title: "AI Generated Meme 15",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_54_54.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 16,
+      title: "AI Generated Meme 16",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_55_34.png",
+      description: "AI generated content"
+    },
+    {
+      id: 17,
+      title: "AI Generated Meme 17",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_56_26.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 18,
+      title: "AI Generated Meme 18",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_56_31.png",
+      description: "AI generated viral content"
+    },
+    {
+      id: 19,
+      title: "AI Generated Meme 19",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_56_35.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 20,
+      title: "AI Generated Meme 20",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_56_42.png",
+      description: "AI generated content"
+    },
+    {
+      id: 21,
+      title: "AI Generated Meme 21",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_57_43.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 22,
+      title: "AI Generated Meme 22",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_57_52.png",
+      description: "AI generated viral content"
+    },
+    {
+      id: 23,
+      title: "AI Generated Meme 23",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_58_48.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 24,
+      title: "AI Generated Meme 24",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_59_10.png",
+      description: "AI generated content"
+    },
+    {
+      id: 25,
+      title: "AI Generated Meme 25",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_59_13.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 26,
+      title: "AI Generated Meme 26",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 19_59_43.png",
+      description: "AI generated viral content"
+    },
+    {
+      id: 27,
+      title: "AI Generated Meme 27",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_00_09.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 28,
+      title: "AI Generated Meme 28",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_01_29.png",
+      description: "AI generated content"
+    },
+    {
+      id: 29,
+      title: "AI Generated Meme 29",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_01_36.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 30,
+      title: "AI Generated Meme 30",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_01_42.png",
+      description: "AI generated viral content"
+    },
+    {
+      id: 31,
+      title: "AI Generated Meme 31",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_02_52.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 32,
+      title: "AI Generated Meme 32",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_03_19.png",
+      description: "AI generated content"
+    },
+    {
+      id: 33,
+      title: "AI Generated Meme 33",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_03_22.png",
+      description: "AI generated meme"
+    },
+    {
+      id: 34,
+      title: "AI Generated Meme 34",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_03_33.png",
+      description: "AI generated viral content"
+    },
+    {
+      id: 35,
+      title: "AI Generated Meme 35",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 20_03_52.png",
+      description: "AI generated chaos"
+    },
+    {
+      id: 36,
+      title: "AI Generated Meme 36",
+      image: "/Meme Section Website/ChatGPT Image 8. Sept. 2025, 22_18_13.png",
+      description: "AI generated content"
+    },
+    {
+      id: 37,
+      title: "Energy Battle on Powell Index",
+      image: "/Meme Section Website/Kampf der Energien auf dem Powell Index.png",
+      description: "Energy battle on Powell Index"
+    },
+    {
+      id: 38,
+      title: "Energy Fighters in Boxing Ring",
+      image: "/Meme Section Website/Kampf der Energien im Boxring.png",
+      description: "Energy fighters in boxing ring"
+    },
+    {
+      id: 39,
+      title: "Battle of Powerful Fighters",
+      image: "/Meme Section Website/Kampf der kräftigen Kämpfer.png",
+      description: "Battle of powerful fighters"
+    },
+    {
+      id: 40,
+      title: "Powell Index Decision Points",
+      image: "/Meme Section Website/Powell Index und Entscheidungspunkte.png",
+      description: "Powell Index decision points"
     }
   ];
 
@@ -98,8 +255,45 @@ export default function MemeGallery() {
   const topRowMemes = memes.slice(0, Math.ceil(memes.length / 2));
   const bottomRowMemes = memes.slice(Math.ceil(memes.length / 2));
 
+  // Function to download image
+  const downloadImage = (imageUrl: string, title: string) => {
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.download = `${title.replace(/\s+/g, '_')}_ratecuts_meme.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  // Function to share image
+  const shareImage = async (imageUrl: string, title: string) => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: title,
+          text: `Check out this $RATECUTS meme: ${title}`,
+          url: window.location.href
+        });
+      } else {
+        // Fallback: copy link to clipboard
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      }
+    } catch (error) {
+      console.error('Error sharing:', error);
+      // Fallback: copy link to clipboard
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('Link copied to clipboard!');
+      } catch (copyError) {
+        console.error('Error copying link:', copyError);
+        alert('Could not share or copy link. Please try again.');
+      }
+    }
+  };
+
   return (
-    <section className="relative py-20 px-4 overflow-hidden">
+    <section id="meme-gallery" className="relative py-12 sm:py-20 px-4 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -108,7 +302,7 @@ export default function MemeGallery() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black mb-8 gradient-text">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black mb-8 gradient-text whitespace-nowrap">
             MEME CHAOS UNLEASHED
           </h2>
           
@@ -130,13 +324,13 @@ export default function MemeGallery() {
           </div>
         </motion.div>
 
-        {/* Two Row Animated Meme Gallery */}
-        <div className="space-y-8">
+        {/* Mobile-Friendly Animated Meme Gallery */}
+        <div className="space-y-6 md:space-y-8">
           {/* Top Row - Scrolls Right */}
           <div className="overflow-hidden">
             <motion.div
-              className="flex gap-4 w-max"
-              animate={{ x: [0, -((topRowMemes.length * 272) / 2)] }}
+              className="flex gap-4 md:gap-6 w-max"
+              animate={{ x: [0, -((topRowMemes.length * 200) / 2)] }}
               transition={{
                 duration: 20,
                 repeat: Infinity,
@@ -147,10 +341,10 @@ export default function MemeGallery() {
                 <motion.div
                   key={`top-${meme.id}-${index}`}
                   whileHover={{ scale: 1.05, zIndex: 10 }}
-                  className="flex-shrink-0 w-64 h-64 bg-black border-2 border-yellow-400/30 rounded-xl overflow-hidden cursor-pointer group"
+                  className="flex-shrink-0 w-40 h-40 md:w-64 md:h-64 bg-black border-2 border-yellow-400/30 rounded-xl overflow-hidden cursor-pointer group"
                   onClick={() => setLightboxImage(meme.image)}
                   style={{
-                    boxShadow: '0 0 20px rgba(234, 179, 8, 0.2)'
+                    boxShadow: '0 0 15px rgba(234, 179, 8, 0.2)'
                   }}
                 >
                   {/* Actual Meme Image */}
@@ -167,8 +361,8 @@ export default function MemeGallery() {
           {/* Bottom Row - Scrolls Left */}
           <div className="overflow-hidden">
             <motion.div
-              className="flex gap-4 w-max"
-              animate={{ x: [-((bottomRowMemes.length * 272) / 2), 0] }}
+              className="flex gap-4 md:gap-6 w-max"
+              animate={{ x: [-((bottomRowMemes.length * 200) / 2), 0] }}
               transition={{
                 duration: 25,
                 repeat: Infinity,
@@ -179,10 +373,10 @@ export default function MemeGallery() {
                 <motion.div
                   key={`bottom-${meme.id}-${index}`}
                   whileHover={{ scale: 1.05, zIndex: 10 }}
-                  className="flex-shrink-0 w-64 h-64 bg-black border-2 border-red-400/30 rounded-xl overflow-hidden cursor-pointer group"
+                  className="flex-shrink-0 w-40 h-40 md:w-64 md:h-64 bg-black border-2 border-red-400/30 rounded-xl overflow-hidden cursor-pointer group"
                   onClick={() => setLightboxImage(meme.image)}
                   style={{
-                    boxShadow: '0 0 20px rgba(239, 68, 68, 0.2)'
+                    boxShadow: '0 0 15px rgba(239, 68, 68, 0.2)'
                   }}
                 >
                   {/* Actual Meme Image */}
@@ -232,8 +426,37 @@ export default function MemeGallery() {
                 <img 
                   src={lightboxImage}
                   alt="Fullscreen meme"
-                  className="w-full h-full object-contain max-h-[80vh]"
+                  className="w-full h-full object-contain max-h-[70vh]"
                 />
+              </div>
+              {/* Action Buttons */}
+              <div className="flex justify-center gap-4 mt-6">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const meme = memes.find(m => m.image === lightboxImage);
+                    if (meme) {
+                      downloadImage(lightboxImage, meme.title);
+                    }
+                  }}
+                  className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300"
+                >
+                  <Download size={20} />
+                  Download Meme
+                </button>
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    const meme = memes.find(m => m.image === lightboxImage);
+                    if (meme) {
+                      shareImage(lightboxImage, meme.title);
+                    }
+                  }}
+                  className="flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300"
+                >
+                  <Share2 size={20} />
+                  Share Meme
+                </button>
               </div>
             </div>
           </motion.div>

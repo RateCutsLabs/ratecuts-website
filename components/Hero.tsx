@@ -7,7 +7,8 @@ import PowellIndex from '@/components/PowellIndex';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-start md:items-center justify-center overflow-hidden pt-8 md:pt-0">
+    // Removed pt-20 and md:pt-24 since navigation is no longer fixed
+    <section id="hero" className="relative flex items-start md:items-center justify-center overflow-hidden pt-8 md:pt-0 pb-0">
       <div className="relative z-10 text-center px-2 w-full mx-auto mt-8 md:mt-0">
         {/* Main Title - Matching Coming Soon Style */}
         {/* <motion.div
@@ -16,13 +17,13 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="mb-6 md:mb-8 lg:mb-16 relative"
         >
-          <h1 className="text-6xl sm:text-4xl md:text-4xl lg:text-6xl xl:text-8xl font-black mb-4 md:mb-6 orbitron">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 md:mb-6 orbitron whitespace-nowrap">
             <span className="gradient-text animate-neon-flicker">$RATECUTS</span>
           </h1>
           
           <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8">
             <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-8 md:max-w-16 lg:max-w-32 animate-pulse" />
-            <span className="text-cyan-400 text-xs md:text-sm font-bold tracking-wider uppercase space-grotesk animate-neon-flicker">EPIC BATTLE</span>
+            <span className="text-cyan-400 text-xs sm:text-sm md:text-base font-bold tracking-wider uppercase space-grotesk animate-neon-flicker">EPIC BATTLE</span>
             <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-8 md:max-w-16 lg:max-w-32 animate-pulse" />
           </div>
         </motion.div> */}
@@ -32,7 +33,8 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="flex flex-row justify-center items-center gap-0 sm:gap-1 md:gap-0 mb-6 md:mb-16 px-2 sm:px-4 relative z-10 w-full"
+          // Reduced bottom margin from mb-4 sm:mb-6 md:mb-16 to mb-2 sm:mb-3 md:mb-8
+          className="flex flex-row justify-center items-center gap-0 sm:gap-1 md:gap-0 lg:mt-6 mb-2 sm:mb-3 md:mb-8 px-2 sm:px-4 relative z-10 w-full"
         >
           {/* Rate Character */}
           <motion.div
@@ -79,7 +81,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.5 }}
           >
             {/* Interactive Powell Index Gauge */}
-            <div className="w-full flex items-center justify-center">
+            <div className="w-full lg:mt-2 flex items-center justify-center">
               <PowellIndex />
             </div>
           </motion.div>
@@ -127,10 +129,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-center mt-10 pb-6"
+          className="text-center sm:mt-4 pb-4 sm:pb-6"
         >
           <p 
-            className="text-white text-sm md:text-base lg:text-lg font-mono tracking-wide"
+            className="text-white text-sm md:text-base lg:text-2xl font-mono tracking-wide"
             style={{
               textShadow: `
                 0 0 10px rgba(255, 255, 255, 0.8),
@@ -148,14 +150,14 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8"
+          className="flex flex-row gap-4 justify-center items-center mt-6 mb-6 sm:mt-8 flex-wrap w-full"
         >
-          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style={{boxShadow: '0 0 20px rgba(239, 68, 68, 0.5)'}}>
-            PLAY TO WIN
-          </button>
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg" style={{boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)'}}>
-            CHOOSE YOUR SIDE
-          </button>
+          <a href="https://pump.fun/coin/JbW2LnWdSmWR2APPcaN5tN5NiDHAzUzX73mtwMRpump" target="_blank" rel="noopener noreferrer" className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center" style={{boxShadow: '0 0 20px rgba(239, 68, 68, 0.5)'}}>
+            Buy Now
+          </a>
+          <a href="https://x.com/i/communities/1964799556366868890" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center" style={{boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)'}}>
+            Join Community
+          </a>
         </motion.div>
 
       </div>

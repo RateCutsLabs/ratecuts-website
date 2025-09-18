@@ -7,7 +7,7 @@ export default function FightingClip() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   return (
-    <section className="relative py-20 px-4">
+    <section id="fighting-clip" className="relative py-12 sm:py-20 px-4">
       <div className="max-w-6xl mx-auto text-center">
         {/* Section Title */}
         <motion.h2 

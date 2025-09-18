@@ -6,7 +6,7 @@ import { ExternalLink, MessageCircle, Twitter, Send, Zap, Flame, Star } from 'lu
 
 export default function Footer() {
   return (
-    <footer className="py-20 relative overflow-hidden border-t-4 border-yellow-400/50">
+    <footer className="py-12 sm:py-20 relative overflow-hidden border-t-4 border-yellow-400/50">
       {/* Remove chaotic background since it's now global */}
       
       <div className="container mx-auto px-4 relative z-10">

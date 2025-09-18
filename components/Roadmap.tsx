@@ -54,7 +54,7 @@ const roadmapData: RoadmapItem[] = [
 
 export default function Roadmap() {
   return (
-    <section className="relative py-20 px-4">
+    <section id="roadmap" className="relative py-12 sm:py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -89,12 +89,12 @@ export default function Roadmap() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className={`relative flex items-center mb-16 ${
-                index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                index % 2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col'
               }`}
             >
               {/* Content Card */}
               <div className={`w-full md:w-5/12 ${
-                index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'
+                index % 2 === 0 ? 'md:pr-8 md:pt-0 pt-12' : 'md:pl-8 md:pt-0 pt-12'
               }`}>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
@@ -148,7 +148,7 @@ export default function Roadmap() {
               </div>
 
               {/* Timeline Node */}
-              <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-black z-10">
+              <div className="flex md:absolute absolute left-1/2 transform -translate-x-1/2 md:translate-y-0 -translate-y-6 w-6 h-6 rounded-full border-4 border-black z-10">
                 <div className={`w-full h-full rounded-full ${
                   item.status === 'active' ? 'bg-yellow-400' :
                   item.status === 'completed' ? 'bg-green-400' :

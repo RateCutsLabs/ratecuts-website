@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function CommunitySection() {
   return (
-    <section className="relative py-20 px-4">
+    <section id="community" className="relative py-12 sm:py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <motion.div
