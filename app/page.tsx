@@ -18,6 +18,7 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
+
     <>
       <Hero />
       <LiveTicker />
@@ -39,5 +40,6 @@ export default function Home() {
       <FinalCTA />
       {/* <Footer /> */}
     </>
+
   );
 }
