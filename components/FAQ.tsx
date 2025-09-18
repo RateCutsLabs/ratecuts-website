@@ -116,7 +116,7 @@ export default function FAQ() {
               className="relative max-w-lg"
             >
               <Image 
-                src="/faq.png" 
+                src="/faq.webp" 
                 alt="FAQ Illustration" 
                 width={500}
                 height={500}

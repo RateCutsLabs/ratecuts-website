@@ -67,7 +67,7 @@ export default function Hero() {
                   className="w-full h-full"
                 >
                   <Image
-                    src="/rate-character-image.png"
+                    src="/rate-character-image.webp"
                     alt="Rate Character"
                     fill
                     className="object-contain"
@@ -126,7 +126,7 @@ export default function Hero() {
                 className="w-full h-full"
               >
                 <Image
-                  src="/cut-character-image.png"
+                  src="/cut-character-image.webp"
                   alt="Cut Character"
                   fill
                   className="object-contain"

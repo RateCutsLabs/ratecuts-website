@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 export default function LogosMarquee() {
   const logos = [
-    { src: '/sitelogos/dexscreenerlogo.png', alt: 'DexScreener' },
-    { src: '/sitelogos/dextools.png', alt: 'DexTools' },
+    { src: '/sitelogos/dexscreenerlogo.webp', alt: 'DexScreener' },
+    { src: '/sitelogos/dextools.webp', alt: 'DexTools' },
     { src: '/sitelogos/geckoterminal.webp', alt: 'GeckoTerminal' },
   ];
 

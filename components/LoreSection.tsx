@@ -88,7 +88,7 @@ export default function LoreSection() {
               {/* Lore Image */}
               <div className="relative">
                 <Image 
-                  src="/lore-image.png"
+                  src="/lore-image.webp"
                   alt="The Narrative Battlefield"
                   width={600}
                   height={400}

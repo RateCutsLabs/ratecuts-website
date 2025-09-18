@@ -25,7 +25,7 @@ export default function FinalCTA() {
                 <div className="absolute inset-0 bg-black/30" />
                 <div className="relative z-10 w-full h-full flex items-center justify-center">
                   <Image 
-                    src="/fight night.png"
+                    src="/fight night.webp"
                     alt="Fight Night Arena"
                     fill
                     className="object-cover"

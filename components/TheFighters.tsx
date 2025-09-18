@@ -69,7 +69,7 @@ export default function TheFighters() {
                   <div className="relative mb-6">
                     <div className="absolute inset-0 bg-red-400 rounded-full blur-lg opacity-30 animate-pulse"></div>
                     <Image 
-                      src="/fight-cut.png"
+                      src="/fight-cut.webp"
                       alt="Cut Fighter"
                       width={160}
                       height={160}
@@ -128,7 +128,7 @@ export default function TheFighters() {
                   <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl blur-lg opacity-40 group-hover:opacity-60 transition-opacity"></div>
                   <div className="relative bg-gradient-to-br from-yellow-500/30 to-yellow-600/30 border-3 border-yellow-400 rounded-xl p-6 text-center backdrop-blur-sm">
                     <Image 
-                      src="/Powell-Index.png"
+                      src="/Powell-Index.webp"
                       alt="Powell Index"
                       width={240}
                       height={240}
@@ -162,7 +162,7 @@ export default function TheFighters() {
                   <div className="relative mb-6">
                     <div className="absolute inset-0 bg-orange-400 rounded-full blur-lg opacity-30 animate-pulse"></div>
                     <Image 
-                      src="/fight-rate.png"
+                      src="/fight-rate.webp"
                       alt="Rate Fighter"
                       width={160}
                       height={160}

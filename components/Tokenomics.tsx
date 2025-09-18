@@ -201,7 +201,7 @@ export default function Tokenomics() {
             className="my-0 relative z-10"
           >
             <Image 
-              src="/token-allocation.png"
+              src="/token-allocation.webp"
               alt="Token Allocation Chart"
               width={320}
               height={320}

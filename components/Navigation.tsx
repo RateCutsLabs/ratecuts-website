@@ -115,7 +115,7 @@ export default function Navigation() {
           >
             <a href="/" className="block text-center">
               <Image 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="$RATECUTS Logo" 
                 width={200}
                 height={200}

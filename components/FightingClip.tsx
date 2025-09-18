@@ -94,7 +94,7 @@ export default function FightingClip() {
                   controls
                   autoPlay
                   muted
-                  poster="/placeholder-video-poster.jpg"
+                  poster="/placeholder-video-poster.webp"
                 >
                   <source src="/fight-video.MP4" type="video/mp4" />
                   Your browser does not support the video tag.

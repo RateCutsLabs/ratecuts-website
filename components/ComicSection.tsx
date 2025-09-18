@@ -12,22 +12,22 @@ export default function ComicSection() {
     {
       title: "Page 1",
       description: "Cut searches for the mystical SolanaBalls to wish for RateCuts",
-      image: "/Page 1.png"
+      image: "/Page 1.webp"
     },
     {
       title: "Page 2",
       description: "Rate blocks him: \"High rates must remain.\"",
-      image: "/Page 2.png"
+      image: "/Page 2.webp"
     },
     {
       title: "Page 3", 
       description: "First epic clash begins between Cut and Rate",
-      image: "/Page 3.png"
+      image: "/Page 3.webp"
     },
     {
       title: "Page 4",
       description: "Epic battle continues... To be continued in Part 2",
-      image: "/Page 4.png"
+      image: "/Page 4.webp"
     }
   ];
 
