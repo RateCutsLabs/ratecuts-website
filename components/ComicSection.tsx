@@ -52,6 +52,12 @@ export default function ComicSection() {
             The SolanaBalls Saga Begins…
           </h2>
           
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+            <span className="text-cyan-400 font-bold text-lg animate-pulse">EPIC STORY</span>
+            <div className="h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+          </div>
+          
           <div className="max-w-4xl mx-auto text-center relative">
             {/* Floating particles effect */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -81,7 +87,7 @@ export default function ComicSection() {
                 }}>
                   Cut is on the hunt.
                 </p>
-                <span className="text-2xl animate-bounce">⚡</span>
+                <span className="text-2xl">⚡</span>
               </div>
               
               <div className="flex items-center justify-center gap-4 mb-6">

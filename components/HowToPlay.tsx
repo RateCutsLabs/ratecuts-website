@@ -157,8 +157,8 @@ export default function HowToPlay() {
                         </div>
 
                         {/* Corner decorations */}
-                        <div className="absolute bottom-2 left-2 text-yellow-400 text-lg animate-pulse opacity-50">⚡</div>
-                        <div className="absolute bottom-2 right-2 text-red-400 text-lg animate-bounce opacity-50">🔥</div>
+                        {/* <div className="absolute bottom-2 left-2 text-yellow-400 text-lg animate-pulse opacity-50">⚡</div>
+                        <div className="absolute bottom-2 right-2 text-red-400 text-lg animate-bounce opacity-50">🔥</div> */}
                       </div>
                     </div>
                   </div>

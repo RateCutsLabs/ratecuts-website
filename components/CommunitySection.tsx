@@ -16,6 +16,13 @@ export default function CommunitySection() {
           <h2 className="text-4xl md:text-6xl font-black mb-8 gradient-text">
             THE CUT CLUB
           </h2>
+          
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-1 bg-gradient-to-r from-transparent via-red-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+            <span className="text-yellow-400 font-bold text-lg animate-pulse">CHAOS LEGION</span>
+            <div className="h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+          </div>
+          
           <h3 className="text-3xl md:text-4xl font-bold text-yellow-400 mb-8">
             Welcome to chaos.
           </h3>

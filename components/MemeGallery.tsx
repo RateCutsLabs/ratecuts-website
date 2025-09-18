@@ -31,6 +31,12 @@ export default function MemeGallery() {
           <h2 className="text-4xl md:text-6xl font-black mb-8 gradient-text">
             MEME CHAOS UNLEASHED
           </h2>
+          
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+            <span className="text-yellow-400 font-bold text-lg animate-pulse">VIRAL ARSENAL</span>
+            <div className="h-1 bg-gradient-to-r from-transparent via-pink-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+          </div>
           <div className="max-w-4xl mx-auto">
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-4">
               RateCuts is a meme machine.

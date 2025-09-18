@@ -18,6 +18,12 @@ export default function FightingClip() {
         >
           THE FIGHT
         </motion.h2>
+        
+        <div className="flex items-center justify-center gap-4 mb-12">
+          <div className="h-1 bg-gradient-to-r from-transparent via-red-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+          <span className="text-yellow-400 font-bold text-lg animate-pulse">LIVE ACTION</span>
+          <div className="h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+        </div>
 
         {/* Video Container */}
         <motion.div

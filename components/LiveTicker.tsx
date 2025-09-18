@@ -54,7 +54,7 @@ export default function LiveTicker() {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-6 overflow-hidden relative">
+    <div className="relative bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-6 overflow-hidden">
       {/* Chaotic Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/5 via-red-500/5 to-pink-500/5" />
       

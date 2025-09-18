@@ -24,7 +24,11 @@ export default function LoreSection() {
             ⚡ EPIC LORE ⚡
           </h2>
           
-          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto animate-pulse"></div>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-1 bg-gradient-to-r from-transparent via-red-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+            <span className="text-yellow-400 font-bold text-lg animate-pulse">BATTLE ORIGINS</span>
+            <div className="h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+          </div>
         </motion.div>
 
         {/* Main Lore Content */}
@@ -74,7 +78,7 @@ export default function LoreSection() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="flex items-center gap-4"
               >
-                <span className="text-3xl">📅</span>
+                {/* <span className="text-3xl">📅</span> */}
                 <p className="text-yellow-400 font-bold text-2xl">
                   2025: Rates dominate headlines.
                 </p>
@@ -86,7 +90,7 @@ export default function LoreSection() {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 className="flex items-center gap-4"
               >
-                <span className="text-3xl">💦</span>
+                {/* <span className="text-3xl">💦</span> */}
                 <p className="text-blue-300">
                   Traders sweating. <span className="text-red-400 font-bold">Polymarket degens betting.</span>
                 </p>
@@ -98,7 +102,7 @@ export default function LoreSection() {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 className="flex items-center gap-4"
               >
-                <span className="text-3xl animate-pulse">🚀</span>
+                {/* <span className="text-3xl animate-pulse">🚀</span> */}
                 <p className="text-gray-300">
                   No meme coin dared to claim it… 
                   <span className="text-green-400 font-bold text-2xl">
@@ -134,7 +138,7 @@ export default function LoreSection() {
         >
           {/* Epic background effects */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-red-500/5 via-yellow-500/5 to-blue-500/5 animate-pulse"></div>
+            {/* <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-red-500/5 via-yellow-500/5 to-blue-500/5 animate-pulse"></div> */}
             <div className="absolute top-10 left-10 w-4 h-4 bg-red-400 rounded-full animate-ping"></div>
             <div className="absolute top-20 right-20 w-3 h-3 bg-yellow-400 rounded-full animate-bounce"></div>
             <div className="absolute bottom-10 left-20 w-3.5 h-3.5 bg-blue-400 rounded-full animate-pulse"></div>
@@ -255,7 +259,7 @@ export default function LoreSection() {
                         POWELL INDEX
                       </h4>
                       <p className="text-yellow-200 text-sm font-bold">
-                        🏟️ THE ARENA
+                        THE ARENA
                       </p>
                     </div>
                   </div>
@@ -325,7 +329,7 @@ export default function LoreSection() {
                   ⚔️ LET THE BATTLE BEGIN! ⚔️
                 </p>
                 <p className="text-lg text-gray-300">
-                  🏟️ The Powell Index awaits... Who will claim victory? 🏆
+                  The Powell Index awaits... Who will claim victory?
                 </p>
               </motion.div>
             </div>

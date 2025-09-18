@@ -67,6 +67,12 @@ export default function VisionSection() {
             </span>
           </motion.h2>
           
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+            <span className="text-cyan-400 font-bold text-lg animate-pulse">PROPHECY</span>
+            <div className="h-1 bg-gradient-to-r from-transparent via-pink-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+          </div>
+          
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

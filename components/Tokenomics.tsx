@@ -45,6 +45,13 @@ export default function Tokenomics() {
           <h2 className="text-4xl md:text-6xl font-black mb-8 gradient-text">
             THE WAR BAG
           </h2>
+          
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+            <span className="text-yellow-400 font-bold text-lg animate-pulse">TOKEN SUPPLY</span>
+            <div className="h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent flex-1 max-w-24 animate-pulse"></div>
+          </div>
+          
           <p className="text-xl md:text-2xl text-gray-300">
             Tokenomics for the battle ahead
           </p>

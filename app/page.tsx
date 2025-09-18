@@ -25,7 +25,7 @@ export default function Home() {
       <VisionSection />
       <MemeGallery />
       <Roadmap />
-      <CommunitySection />
+      {/* <CommunitySection /> */}
       <FinalCTA />
       {/* <Footer /> */}
     </>
