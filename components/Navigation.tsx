@@ -26,6 +26,7 @@ export default function Navigation() {
     { label: 'ABOUT', href: '#lore-section' },
     // { label: 'THE FIGHT', href: '#fighting-clip' },
     { label: 'COMIC', href: '#comic-section' },
+    { label: 'TOKENOMICS', href: '#tokenomics', icon: XLogo },
     // { label: 'HOW TO BUY', href: '#how-to-buy' },
     // { label: 'TOKENOMICS', href: '#tokenomics' },
     // { label: 'ROADMAP', href: '#roadmap' },
@@ -35,16 +36,16 @@ export default function Navigation() {
   const mobileMenuItems = [
     { label: 'HOME', href: '#hero' },
     { label: 'ABOUT', href: '#lore-section' },
-    { label: 'THE FIGHT', href: '#fighting-clip' },
+    // { label: 'THE FIGHT', href: '#fighting-clip' },
     { label: 'COMIC', href: '#comic-section' },
     { label: 'HOW TO BUY', href: '#how-to-buy' },
-    { label: 'HOW TO PLAY', href: '#how-to-play' },
+    // { label: 'HOW TO PLAY', href: '#how-to-play' },
     { label: 'TOKENOMICS', href: '#tokenomics' },
-    { label: 'THE FIGHTERS', href: '#the-fighters' },
-    { label: 'VISION', href: '#vision' },
+    // { label: 'THE FIGHTERS', href: '#the-fighters' },
+    // { label: 'VISION', href: '#vision' },
     { label: 'GALLERY', href: '#meme-gallery' },
     { label: 'ROADMAP', href: '#roadmap' },
-    { label: 'FAQ', href: '#faq' },
+    // { label: 'FAQ', href: '#faq' },
     { label: 'COMMUNITY', href: 'https://x.com/i/communities/1964799556366868890' },
     // { label: 'JOIN', href: '#final-cta' },
   ];
@@ -53,9 +54,11 @@ export default function Navigation() {
     // { label: 'TWITTER', href: 'https://x.com/ratecuts_sol', icon: XLogo },
     // { label: 'TELEGRAM', href: 'https://t.me/RateCuts', icon: Send },
     // { label: 'BUY', href: 'https://pump.fun/coin/JbW2LnWdSmWR2APPcaN5tN5NiDHAzUzX73mtwMRpump', icon: ExternalLink },
+    { label: 'GALLERY', href: '#meme-gallery' },
      { label: 'HOW TO BUY', href: '#how-to-buy' , icon: XLogo },
-    { label: 'TOKENOMICS', href: '#tokenomics', icon: XLogo },
+    
     { label: 'ROADMAP', href: '#roadmap' , icon: XLogo},
+     { label: 'COMMUNITY', href: 'https://x.com/i/communities/1964799556366868890' },
   ];
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
