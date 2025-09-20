@@ -420,7 +420,7 @@ export default function MemeGallery() {
             className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
             onClick={() => setLightboxImage(null)}
           >
-            <div className="relative max-w-4xl w-full">
+            <div className="relative w-full max-w-4xl">
               <button 
                 onClick={() => setLightboxImage(null)}
                 className="absolute -top-12 right-0 text-white text-4xl hover:text-red-400 transition-colors z-10"
@@ -442,8 +442,8 @@ export default function MemeGallery() {
                   quality={80}
                 />
               </div>
-              {/* Action Buttons */}
-              <div className="flex justify-center gap-4 mt-6">
+              {/* Action Buttons - responsive layout for mobile */}
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
@@ -452,10 +452,10 @@ export default function MemeGallery() {
                       downloadImage(lightboxImage, meme.title);
                     }
                   }}
-                  className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300"
+                  className="flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-lg transition-all duration-300"
                 >
                   <Download size={20} />
-                  Download Meme
+                  <span>Download</span>
                 </button>
                 <button
                   onClick={(e) => {
@@ -465,10 +465,10 @@ export default function MemeGallery() {
                       shareImage(lightboxImage, meme.title);
                     }
                   }}
-                  className="flex items-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300"
+                  className="flex items-center justify-center gap-2 bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300"
                 >
                   <Share2 size={20} />
-                  Share Meme
+                  <span>Share</span>
                 </button>
               </div>
             </div>

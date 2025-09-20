@@ -3,8 +3,15 @@
 import { motion } from 'framer-motion';
 import PowellIndex from '@/components/PowellIndex';
 import Image from 'next/image';
+import { useState } from 'react';
 
 export default function Hero() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
   return (
     // Removed pt-20 and md:pt-24 since navigation is no longer fixed
     <section id="hero" className="relative flex items-start md:items-center justify-center overflow-hidden pt-8 md:pt-0 pb-0">
@@ -169,14 +176,54 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.9 }}
           className="flex flex-row gap-4 justify-center items-center mt-6 mb-6 sm:mt-8 flex-wrap w-full"
         >
-          <a href="https://pump.fun/coin/JbW2LnWdSmWR2APPcaN5tN5NiDHAzUzX73mtwMRpump" target="_blank" rel="noopener noreferrer" className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center" style={{boxShadow: '0 0 20px rgba(239, 68, 68, 0.5)'}}>
+          <button 
+            onClick={togglePopup}
+            className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center cursor-pointer"
+            style={{boxShadow: '0 0 20px rgba(239, 68, 68, 0.5)'}}
+          >
             Buy Now
-          </a>
+          </button>
           <a href="https://x.com/i/communities/1964799556366868890" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center" style={{boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)'}}>
             Join Community
           </a>
         </motion.div>
 
+        {/* Popup Modal */}
+        {showPopup && (
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[9999] p-4">
+            <div className="bg-gray-900 border-2 border-pink-500 rounded-xl p-6 sm:p-8 max-w-md w-full relative z-[10000]">
+              <button 
+                onClick={togglePopup}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold"
+              >
+                &times;
+              </button>
+              
+              <h3 className="text-xl sm:text-2xl font-bold text-pink-500 mb-4 text-center">
+                Presale Information
+              </h3>
+              
+              <p className="text-gray-300 text-center mb-6">
+                The Powell Index is loading...<br />
+                <span className="text-yellow-400 font-bold">Rate %</span> vs <span className="text-red-400 font-bold">Cut ✂️</span> battle begins soon!<br />
+                <span className="text-pink-400 animate-pulse">Join the chaos at launch!</span>
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              
+                <a
+                  href="https://docs.pinksale.finance/investing/how-to-buy-a-presale"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-lg transition-all text-center"
+                >
+                  How to buy a Presale on Pinksale
+
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

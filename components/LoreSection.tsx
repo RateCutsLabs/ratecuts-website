@@ -21,7 +21,7 @@ export default function LoreSection() {
             <div className="absolute bottom-0 left-1/3 w-1 h-1 bg-blue-400 rounded-full animate-pulse"></div>
           </div>
           
-          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-8 relative z-10 gradient-text whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black mb-4 sm:mb-8 relative z-0 gradient-text whitespace-nowrap">
             ⚡ The Narrative ⚡
           </h2>
           

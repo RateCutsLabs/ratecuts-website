@@ -32,14 +32,14 @@ export default function LiveTicker() {
  
   const tickerData: TickerItem[] = [
     { 
-      label: '$RATECUT', 
+      label: '$RATECUTS', 
       value: `🚀 Join our  twitter and telegram community  Now 💬`, 
       color: 'text-yellow-400',
       icon: null,
       glow: 'shadow-yellow-400/50'
     },
     { 
-     label: '$RATECUT',
+     label: '$RATECUTS',
       value: `🚀 Join our  twitter and telegram community  Now 💬`, 
       color: 'text-green-400',
       icon: null,
@@ -48,7 +48,7 @@ export default function LiveTicker() {
   ];
 
   return (
-    <div id="live-ticker" className="relative bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-2 overflow-hidden">
+    <div id="live-ticker" className="relative bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-2 overflow-hidden z-0">
       {/* Chaotic Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/5 via-red-500/5 to-pink-500/5" />
       
@@ -77,7 +77,7 @@ export default function LiveTicker() {
       
       {/* Scrolling Ticker */}
       <motion.div
-        className="flex whitespace-nowrap relative z-10 mt-1"
+        className="flex whitespace-nowrap relative z-0 mt-1"
         animate={{ x: [0, -2400] }}
         transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       >
@@ -105,8 +105,8 @@ export default function LiveTicker() {
       </motion.div>
 
       {/* Gradient Overlays */}
-      <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#0A0A0F] to-transparent pointer-events-none z-20" />
-      <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#0A0A0F] to-transparent pointer-events-none z-20" />
+      <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-[#0A0A0F] to-transparent pointer-events-none z-0" />
+      <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-[#0A0A0F] to-transparent pointer-events-none z-0" />
       
       {/* Corner Chaos Elements */}
       <div className="absolute top-2 left-4 w-3 h-3 bg-yellow-400 rounded-full animate-ping" />
