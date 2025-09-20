@@ -150,7 +150,7 @@ export default function Navigation() {
           </div>
           
           <motion.div
-            className="hidden md:flex flex-shrink-0 mx-4 md:mx-6 relative z-30"
+            className="hidden max-w-[11rem] md:flex flex-shrink-0 mx-4 md:mx-6 relative z-30"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
@@ -172,7 +172,7 @@ export default function Navigation() {
           </motion.div>
 
           {/* Right Menu - Desktop */}
-          <div className="hidden md:flex  mt-[-80px] items-center gap-3 lg:gap-4 flex-1 justify-start">
+          <div className="hidden md:flex  mt-[-80px] tex-left gap-3 lg:gap-4 flex-1">
             {rightMenuItems.map((item, index) => (
               <motion.a
                 key={index}
