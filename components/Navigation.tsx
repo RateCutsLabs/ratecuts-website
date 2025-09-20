@@ -139,7 +139,7 @@ export default function Navigation() {
                   alt="$RATECUTS Logo" 
                   width={500}
                   height={500}
-                  className={`h-28 md:h-52 lg:h-48 mx-auto object-contain mt-4 ${isMenuOpen ? 'hidden' : 'block'}`}
+                  className={`h-28 md:h-52 lg:h-48 mx-auto object-contain mt-[-20px] ${isMenuOpen ? 'hidden' : 'block'}`}
                   style={{WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale'}}
                   loading="eager"
                   priority
@@ -156,7 +156,7 @@ export default function Navigation() {
             transition={{ duration: 1 }}
           >
             <a href="/" className="block text-center">
-              {/* Adjusted logo height - change these values to modify logo size */}
+            
               <Image 
                 src="/new-ratecut-logo.png" 
                 alt="$RATECUTS Logo" 
