@@ -48,7 +48,7 @@ export default function LiveTicker() {
   ];
 
   return (
-    <div id="live-ticker" className="relative bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-3 mt-2 overflow-hidden">
+    <div id="live-ticker" className="relative bg-gradient-to-r from-[#0A0A0F] via-[#1A0A1A] to-[#0A0A0F] border-y-4 border-yellow-400/50 py-2 overflow-hidden">
       {/* Chaotic Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/5 via-red-500/5 to-pink-500/5" />
       
@@ -86,12 +86,12 @@ export default function LiveTicker() {
           <div key={repeatIndex} className="flex items-center">
             {tickerData.map((item, index) => (
               <div key={`${repeatIndex}-${index}`} className="flex items-center mx-6">
-                <span className="font-black text-white text-sm mr-3 press-start animate-neon-flicker">
+                <span className="font-black text-white text-sm mr-3 system-font animate-neon-flicker">
                   {item.label}:
                 </span>
                 <div className={`flex items-center gap-2 px-3 py-1 rounded-lg bg-black/50 border border-current/30 ${item.glow} shadow-lg`}>
                   {item.icon && <item.icon className="h-4 w-4 animate-pulse" />}
-                  <span className={`font-black text-sm ${item.color} press-start animate-pulse`}>
+                  <span className={`font-black text-sm ${item.color} system-font animate-pulse`}>
                     {item.value}
                   </span>
                 </div>

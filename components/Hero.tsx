@@ -33,7 +33,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
           // Reduced bottom margin from mb-4 sm:mb-6 md:mb-16 to mb-2 sm:mb-3 md:mb-8
-          className="flex flex-row justify-center items-center gap-0 sm:gap-1 md:gap-0 lg:mt-6 mb-2 sm:mb-3 md:mb-8 px-2 sm:px-4 relative z-10 w-full"
+          className="flex flex-row justify-center items-center gap-0 sm:gap-1 md:gap-0 mb-2 sm:mb-3 md:mb-8 px-2 sm:px-4 relative z-10 w-full"
         >
           {/* Rate Character */}
           <motion.div
