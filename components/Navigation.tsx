@@ -96,9 +96,9 @@ export default function Navigation() {
     <nav className={`relative z-50 transition-colors duration-300 ${isMenuOpen ? 'bg-black/95' : 'bg-transparent  mt-4'}`} style={{WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale', fontVariantLigatures: 'none'}}>
       {/* Adjusted padding for navigation height - change these values to modify height */}
       <div className="w-full px-0 md:px-6 py-3 md:py-6 sm:my-6 lg:my-[-20px] lg:py-0 relative z-10 ">
-        <div className="flex items-center justify-between relativemy-6">
+        <div className="flex relativemy-6">
           {/* Left Menu - Desktop */}
-          <div className="hidden md:flex items-center mt-[-80px] gap-4 lg:gap-6  flex-1 justify-center">
+          <div className="hidden md:flex items-center mt-[-80px] gap-4 lg:gap-6  flex-1 justify-end">
             {desktopMenuItems.map((item, index) => (
               <motion.a
                 key={index}
@@ -172,7 +172,7 @@ export default function Navigation() {
           </motion.div>
 
           {/* Right Menu - Desktop */}
-          <div className="hidden md:flex  mt-[-80px] items-center gap-3 lg:gap-4 flex-1 justify-center">
+          <div className="hidden md:flex  mt-[-80px] items-center gap-3 lg:gap-4 flex-1 justify-start">
             {rightMenuItems.map((item, index) => (
               <motion.a
                 key={index}
