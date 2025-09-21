@@ -2,6 +2,7 @@ import Hero from '@/components/Hero';
 import LiveTicker from '@/components/LiveTicker';
 import FightingClip from '@/components/FightingClip';
 import LogosMarquee from '@/components/LogosMarquee';
+import ChaosPartners from '@/components/ChaosPartners';
 import ComicSection from '@/components/ComicSection';
 import HowToBuy from '@/components/HowToBuy';
 import LoreSection from '@/components/LoreSection';
@@ -25,8 +26,9 @@ export default function Home() {
       <LoreSection />
       <FightingClip />
       <LogosMarquee />
+      <ChaosPartners />
       <ComicSection />
-      <HowToBuy />
+      {/* <HowToBuy /> */}
       
       <HowToPlay />
       <Tokenomics />

@@ -96,18 +96,18 @@ export default function Tokenomics() {
           <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
             <div className="h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent flex-1 max-w-16 sm:max-w-24 animate-pulse"></div>
             <span className="text-yellow-400 font-bold text-sm sm:text-base animate-pulse">TOKEN SUPPLY</span>
-            <div className="h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent flex-1 max-w-16 sm:max-w-24 animate-pulse"></div>
+            <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-16 sm:max-w-24 animate-pulse"></div>
           </div>
         </motion.div>
 
         {/* Tokenomics Layout - With Reduced Gap and Connection Lines */}
         <div ref={containerRef} className="flex flex-col items-center space-y-6 mb-8 sm:mb-12 px-4 relative">
-          {/* SVG for Connection Lines */}
-          <svg 
+        
+          {/* <svg 
             className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
             style={{ minHeight: '500px' }}
           >
-            {/* Lines from top row to center */}
+           
             <line 
               x1={lineCoordinates.supplyToCenter.x1} 
               y1={lineCoordinates.supplyToCenter.y1} 
@@ -127,7 +127,7 @@ export default function Tokenomics() {
               strokeDasharray="6,6"
             />
             
-            {/* Lines from bottom row to center */}
+          
             <line 
               x1={lineCoordinates.treasuryToCenter.x1} 
               y1={lineCoordinates.treasuryToCenter.y1} 
@@ -155,9 +155,8 @@ export default function Tokenomics() {
               strokeWidth="2" 
               strokeDasharray="6,6"
             />
-          </svg>
+          </svg> */}
 
-          {/* Top Row - Supply and Launch */}
           <div className="flex justify-center w-full max-w-2xl gap-12 relative z-10">
             {/* Supply - Left */}
             <motion.div
@@ -175,16 +174,15 @@ export default function Tokenomics() {
               </div>
             </motion.div>
 
-            {/* Launch - Right */}
             <motion.div
               ref={launchRef}
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="w-36 h-36 rounded-full bg-gradient-to-br from-green-400/20 to-transparent border-2 border-gray-700 flex flex-col items-center justify-center text-center p-5 shadow-lg"
+              className="w-36 h-36 rounded-full bg-gradient-to-br from-pink-500/20 to-transparent border-2 border-gray-700 flex flex-col items-center justify-center text-center p-5 shadow-lg"
             >
-              <div className="text-xl font-black text-green-400">
-                Pump.fun fair
+              <div className="text-xl font-black text-pink-500">
+                Pinksale
               </div>
               <div className="text-gray-300 text-base uppercase tracking-wide mt-2">
                 Launch
@@ -201,7 +199,7 @@ export default function Tokenomics() {
             className="my-0 relative z-10"
           >
             <Image 
-              src="/token-allocation.webp"
+              src="/token-alocation-new.png"
               alt="Token Allocation Chart"
               width={320}
               height={320}
@@ -211,56 +209,7 @@ export default function Tokenomics() {
             />
           </motion.div>
 
-          {/* Bottom Row - Treasury, Community, Marketing */}
-          <div className="flex justify-between w-full max-w-2xl relative z-10">
-            {/* Treasury - Left */}
-            <motion.div
-              ref={treasuryRef}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-400/20 to-transparent border-2 border-gray-700 flex flex-col items-center justify-center text-center p-4 shadow-lg"
-            >
-              <div className="text-2xl font-black text-blue-400">
-                2%
-              </div>
-              <div className="text-gray-300 text-sm uppercase tracking-wide mt-1">
-                Treasury
-              </div>
-            </motion.div>
-
-            {/* Community - Middle */}
-            <motion.div
-              ref={communityRef}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="w-32 h-32 rounded-full bg-gradient-to-br from-red-400/20 to-transparent border-2 border-gray-700 flex flex-col items-center justify-center text-center p-4 shadow-lg"
-            >
-              <div className="text-2xl font-black text-red-400">
-                1%
-              </div>
-              <div className="text-gray-300 text-sm uppercase tracking-wide mt-1">
-                Community
-              </div>
-            </motion.div>
-
-            {/* Marketing - Right */}
-            <motion.div
-              ref={marketingRef}
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-400/20 to-transparent border-2 border-gray-700 flex flex-col items-center justify-center text-center p-4 shadow-lg"
-            >
-              <div className="text-2xl font-black text-purple-400">
-                1%
-              </div>
-              <div className="text-gray-300 text-sm uppercase tracking-wide mt-1">
-                Marketing
-              </div>
-            </motion.div>
-          </div>
+        
         </div>
 
         {/* Tagline */}
@@ -271,7 +220,7 @@ export default function Tokenomics() {
           className="text-center mb-8 sm:mb-16 px-4"
         >
           <p className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text">
-            96% pure chaos for the people.
+            70% pure chaos for the people.
           </p>
         </motion.div>
        

@@ -16,8 +16,8 @@ interface RoadmapItem {
 const roadmapData: RoadmapItem[] = [
   {
     phase: 'Q3 2025',
-    title: 'Round 1 – Launch the chaos',
-    description: 'Pump.fun ignition, Powell Index goes live.',
+    title: 'Round 1 – KOL Chaos Push',
+    description: 'Top KOLs will shill $RATECUTS.All paid in USDT 💵, no token handouts, no insider bags.  Powell Index goes live',
     status: 'active',
     icon: Zap,
     color: 'text-yellow-400',

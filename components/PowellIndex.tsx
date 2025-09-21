@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
 // Dynamically import GaugeChart to prevent SSR issues
@@ -15,7 +15,8 @@ const GaugeChart = dynamic(() => import('react-gauge-chart'), {
 });
 
 export default function PowellIndex() {
-  const [indexValue, setIndexValue] = useState(50);
+  const [targetValue, setTargetValue] = useState(50);
+  const animatedValue = useMotionValue(50);
   const [isComponentReady, setIsComponentReady] = useState(false);
 
   // Initialize component after mount to ensure proper loading
@@ -27,23 +28,49 @@ export default function PowellIndex() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Auto-animate the gauge value for demo purposes
+  // Animate to target value with realistic car gauge movement
+  useEffect(() => {
+    if (!isComponentReady) return;
+    
+    const controls = animate(animatedValue, targetValue, {
+      duration: 2, // Longer duration for more realistic movement
+      ease: "easeInOut", // Smooth acceleration and deceleration
+    });
+
+    return controls.stop;
+  }, [targetValue, isComponentReady, animatedValue]);
+
+  // Auto-animate the gauge value for demo purposes with more realistic movement
   useEffect(() => {
     if (!isComponentReady) return;
     
     const interval = setInterval(() => {
-      const newValue = Math.random() * 100; // Random value between 0-100 (full range)
-      setIndexValue(newValue);
-    }, 3000); // Update every 3 seconds
+      // Create more realistic movement patterns like a car gauge
+      let newValue;
+      const currentValue = animatedValue.get();
+      
+      // Sometimes move in small increments (like a real gauge responding to small changes)
+      if (Math.random() > 0.3) {
+        // Small movement
+        const change = (Math.random() * 20) - 10; // -10 to +10
+        newValue = Math.max(0, Math.min(100, currentValue + change));
+      } else {
+        // Larger movement
+        newValue = Math.random() * 100; // Random value between 0-100
+      }
+      
+      setTargetValue(newValue);
+    }, 4000); // Update every 4 seconds for more realistic pacing
 
     return () => clearInterval(interval);
-  }, [isComponentReady]);
+  }, [isComponentReady, animatedValue]);
 
   const getGaugeColors = () => {
-    if (indexValue < 33) return {
+    const currentValue = animatedValue.get();
+    if (currentValue < 33) return {
       text: 'text-red-400'
     };
-    if (indexValue < 67) return {
+    if (currentValue < 67) return {
       text: 'text-yellow-400'
     };
     return {
@@ -91,42 +118,31 @@ export default function PowellIndex() {
         </div>
         
         {/* Gauge */}
-        {/* <motion.div 
-          className="flex justify-center w-full h-full"
-          animate={{ 
-            scale: [1, 1.02, 1],
-          }}
-          transition={{ 
-            duration: 2,
-            repeat: Infinity,
-          }}
-        > */}
-          <div className="relative w-full h-full">
-            <GaugeChart 
-              id="powell-gauge"
-              nrOfLevels={3}
-              colors={[
-                '#ef4444', // Red for bearish
-                '#eab308', // Yellow for neutral  
-                '#22c55e'  // Green for bullish
-              ]}
-              arcWidth={0.3}
-              percent={indexValue / 100}
-              textColor="#ffffff"
-              needleColor="#ffffff"
-              hideText={true}
-              animDelay={0}
-              animateDuration={1000}
-              style={{ width: '100%', height: '100%' }}
-            />
-            {/* Custom center text */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <div className={`text-lg sm:text-2xl md:text-4xl lg:text-6xl mt-10 sm:mt-14 md:mt-20 lg:mt-28 font-black ${colors.text} space-grotesk animate-neon-flicker`}>
-                {Math.round(indexValue)}
-              </div>
+        <div className="relative w-full h-full">
+          <GaugeChart 
+            id="powell-gauge"
+            nrOfLevels={3}
+            colors={[
+              '#ef4444', // Red for bearish
+              '#eab308', // Yellow for neutral  
+              '#22c55e'  // Green for bullish
+            ]}
+            arcWidth={0.3}
+            percent={animatedValue.get() / 100}
+            textColor="#ffffff"
+            needleColor="#ffffff"
+            hideText={true}
+            animDelay={0}
+            animateDuration={2000} // Match our animation duration
+            style={{ width: '100%', height: '100%' }}
+          />
+          {/* Custom center text that animates smoothly */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <div className={`text-lg sm:text-2xl md:text-4xl lg:text-6xl mt-10 sm:mt-14 md:mt-20 lg:mt-28 font-black ${colors.text} space-grotesk animate-neon-flicker`}>
+              {Math.round(animatedValue.get())}
             </div>
           </div>
-        {/* </motion.div> */}
+        </div>
         
         {/* Right Label - CUT NOW */}
         <div className="absolute right-[5px] sm:right-[17px] md:right-[24px] lg:right-[30px] bottom-[7px] sm:bottom-[11px] md:bottom-[16px] lg:bottom-[20px]">
