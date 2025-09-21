@@ -27,7 +27,7 @@ export default function Home() {
       <LogosMarquee />
       <ChaosPartners />
       <ComicSection />
-      <HowToBuy />
+      {/* <HowToBuy /> */}
       
       <HowToPlay />
       <Tokenomics />

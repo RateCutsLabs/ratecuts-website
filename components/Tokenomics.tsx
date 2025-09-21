@@ -96,7 +96,7 @@ export default function Tokenomics() {
           <div className="flex items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-8">
             <div className="h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent flex-1 max-w-16 sm:max-w-24 animate-pulse"></div>
             <span className="text-yellow-400 font-bold text-sm sm:text-base animate-pulse">TOKEN SUPPLY</span>
-            <div className="h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent flex-1 max-w-16 sm:max-w-24 animate-pulse"></div>
+            <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-16 sm:max-w-24 animate-pulse"></div>
           </div>
         </motion.div>
 
@@ -199,7 +199,7 @@ export default function Tokenomics() {
             className="my-0 relative z-10"
           >
             <Image 
-              src="/token-allocation.webp"
+              src="/token-alocation-new.png"
               alt="Token Allocation Chart"
               width={320}
               height={320}
@@ -220,7 +220,7 @@ export default function Tokenomics() {
           className="text-center mb-8 sm:mb-16 px-4"
         >
           <p className="text-xl sm:text-2xl md:text-3xl font-bold gradient-text">
-            96% pure chaos for the people.
+            70% pure chaos for the people.
           </p>
         </motion.div>
        
