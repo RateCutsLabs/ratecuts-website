@@ -17,7 +17,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "How do I buy $RATECUTS?",
-    answer: "Create a wallet like Phantom or Metamask, add SOL or ETH, connect to Pump.fun, and swap instantly. No presale, no taxes, no tricks."
+    answer: "Create a wallet like Phantom or Metamask, add SOL, then swap directly on Raydium.You can also track live charts and liquidity on Dexscreener.No presale, no taxes, no tricks."
   },
   {
     question: "Is $RATECUTS safe?",
