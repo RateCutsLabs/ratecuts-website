@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
 // Dynamically import GaugeChart to prevent SSR issues
@@ -15,8 +15,8 @@ const GaugeChart = dynamic(() => import('react-gauge-chart'), {
 });
 
 export default function PowellIndex() {
+  const [displayValue, setDisplayValue] = useState(50);
   const [targetValue, setTargetValue] = useState(50);
-  const animatedValue = useMotionValue(50);
   const [isComponentReady, setIsComponentReady] = useState(false);
 
   // Initialize component after mount to ensure proper loading
@@ -28,49 +28,60 @@ export default function PowellIndex() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Animate to target value with realistic car gauge movement
+  // Animate the display value gradually to the target value (count up or down)
   useEffect(() => {
     if (!isComponentReady) return;
     
-    const controls = animate(animatedValue, targetValue, {
-      duration: 2, // Longer duration for more realistic movement
-      ease: "easeInOut", // Smooth acceleration and deceleration
-    });
+    let animationFrame: number;
+    let startTime: number | null = null;
+    const duration = 1500; // 1.5 seconds for the animation
+    
+    const animateValue = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = timestamp - startTime;
+      const percentage = Math.min(progress / duration, 1);
+      
+      // Ease out function for smooth deceleration
+      const easeOut = 1 - Math.pow(1 - percentage, 3);
+      
+      // Calculate the current value based on start and target values
+      const currentValue = Math.round(
+        displayValue + (targetValue - displayValue) * easeOut
+      );
+      
+      setDisplayValue(currentValue);
+      
+      if (percentage < 1) {
+        animationFrame = requestAnimationFrame(animateValue);
+      }
+    };
+    
+    animationFrame = requestAnimationFrame(animateValue);
+    
+    return () => {
+      if (animationFrame) {
+        cancelAnimationFrame(animationFrame);
+      }
+    };
+  }, [targetValue, isComponentReady, displayValue]);
 
-    return controls.stop;
-  }, [targetValue, isComponentReady, animatedValue]);
-
-  // Auto-animate the gauge value for demo purposes with more realistic movement
+  // Auto-animate the gauge value for demo purposes
   useEffect(() => {
     if (!isComponentReady) return;
     
     const interval = setInterval(() => {
-      // Create more realistic movement patterns like a car gauge
-      let newValue;
-      const currentValue = animatedValue.get();
-      
-      // Sometimes move in small increments (like a real gauge responding to small changes)
-      if (Math.random() > 0.3) {
-        // Small movement
-        const change = (Math.random() * 20) - 10; // -10 to +10
-        newValue = Math.max(0, Math.min(100, currentValue + change));
-      } else {
-        // Larger movement
-        newValue = Math.random() * 100; // Random value between 0-100
-      }
-      
+      const newValue = Math.random() * 100; // Random value between 0-100
       setTargetValue(newValue);
-    }, 4000); // Update every 4 seconds for more realistic pacing
+    }, 3000); // Update every 3 seconds
 
     return () => clearInterval(interval);
-  }, [isComponentReady, animatedValue]);
+  }, [isComponentReady]);
 
   const getGaugeColors = () => {
-    const currentValue = animatedValue.get();
-    if (currentValue < 33) return {
+    if (displayValue < 33) return {
       text: 'text-red-400'
     };
-    if (currentValue < 67) return {
+    if (displayValue < 67) return {
       text: 'text-yellow-400'
     };
     return {
@@ -128,18 +139,18 @@ export default function PowellIndex() {
               '#22c55e'  // Green for bullish
             ]}
             arcWidth={0.3}
-            percent={animatedValue.get() / 100}
+            percent={displayValue / 100} // Use the animated display value
             textColor="#ffffff"
             needleColor="#ffffff"
             hideText={true}
             animDelay={0}
-            animateDuration={2000} // Match our animation duration
+            animateDuration={50} // Very fast animation since we're handling it manually
             style={{ width: '100%', height: '100%' }}
           />
           {/* Custom center text that animates smoothly */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
             <div className={`text-lg sm:text-2xl md:text-4xl lg:text-6xl mt-10 sm:mt-14 md:mt-20 lg:mt-28 font-black ${colors.text} space-grotesk animate-neon-flicker`}>
-              {Math.round(animatedValue.get())}
+              {displayValue}
             </div>
           </div>
         </div>
