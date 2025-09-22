@@ -44,7 +44,7 @@ export default function PowellIndex() {
       // Ease out function for smooth deceleration
       const easeOut = 1 - Math.pow(1 - percentage, 3);
       
-      // Calculate the current value based on start and target values
+      // Calculate the current value based on displayValue and targetValue
       const currentValue = Math.round(
         displayValue + (targetValue - displayValue) * easeOut
       );
