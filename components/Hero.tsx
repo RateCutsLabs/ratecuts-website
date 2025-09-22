@@ -14,20 +14,20 @@ export default function Hero() {
 
   return (
     // Removed pt-20 and md:pt-24 since navigation is no longer fixed
-    <section id="hero" className="relative flex items-start md:items-center justify-center overflow-hidden pt-8 md:pt-0 pb-0">
-      <div className="relative z-10 text-center px-2 w-full mx-auto mt-8 md:mt-0">
+    <section id="hero" className="relative flex items-start md:items-center justify-center overflow-hidden pt-8 md:pt-0 pb-0 w-full max-w-full">
+      <div className="relative z-10 text-center px-2 w-full mx-auto mt-8 md:mt-0 max-w-full overflow-x-hidden">
         {/* Main Title - Matching Coming Soon Style */}
         {/* <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mb-6 md:mb-8 lg:mb-16 relative"
+          className="mb-6 md:mb-8 lg:mb-16 relative max-w-full"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 md:mb-6 orbitron whitespace-nowrap">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4 md:mb-6 orbitron whitespace-nowrap max-w-full">
             <span className="gradient-text animate-neon-flicker">$RATECUTS</span>
           </h1>
           
-          <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8">
+          <div className="flex items-center justify-center gap-2 md:gap-4 mb-4 md:mb-8 max-w-full">
             <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-8 md:max-w-16 lg:max-w-32 animate-pulse" />
             <span className="text-cyan-400 text-xs sm:text-sm md:text-base font-bold tracking-wider uppercase space-grotesk animate-neon-flicker">EPIC BATTLE</span>
             <div className="h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent flex-1 max-w-8 md:max-w-16 lg:max-w-32 animate-pulse" />
@@ -40,11 +40,11 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
           // Reduced bottom margin from mb-4 sm:mb-6 md:mb-16 to mb-2 sm:mb-3 md:mb-8
-          className="flex flex-row justify-center items-center gap-0 sm:gap-1 md:gap-0 mb-2 sm:mb-3 md:mb-8 px-2 sm:px-4 relative z-10 w-full"
+          className="flex flex-row justify-center items-center gap-0 sm:gap-1 md:gap-0 mb-2 sm:mb-3 md:mb-8 px-2 sm:px-4 relative z-10 w-full max-w-full overflow-x-hidden"
         >
           {/* Rate Character */}
           <motion.div
-            className="relative group flex flex-col items-center flex-shrink-0 order-1 sm:-mr-3 md:-mr-4 lg:-mr-8"
+            className="relative group flex flex-col items-center flex-shrink-0 order-1 sm:-mr-3 md:-mr-4 lg:-mr-8 max-w-full"
             initial={{ x: -300, opacity: 0 }}
             animate={{ x: 0, opacity: 1, y: [0, -15, 0] }}
             transition={{ 
@@ -54,7 +54,7 @@ export default function Hero() {
             }}
           >
             <motion.div
-                className="w-28 h-28 sm:w-32 sm:h-32 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
+                className="w-28 h-28 sm:w-32 sm:h-32 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative max-w-full"
                 animate={{
                   scale: [1, 1.1, 1],
                   rotate: [0, 5, -5, 0]
@@ -71,13 +71,13 @@ export default function Hero() {
                     ]
                   }}
                   transition={{ duration: 0.5, repeat: Infinity }}
-                  className="w-full h-full"
+                  className="w-full h-full max-w-full"
                 >
                   <Image
                     src="/rate-character-image.webp"
                     alt="Rate Character"
                     fill
-                    className="object-contain"
+                    className="object-contain max-w-full"
                     loading="eager"
                     priority
                     quality={75}
@@ -90,20 +90,20 @@ export default function Hero() {
 
           {/* POWELL INDEX - CENTER AND MASSIVE */}
           <motion.div
-            className="relative flex flex-col items-center flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg order-2 sm:-mx-2 md:-mx-4 lg:-mx-8 z-10"
+            className="relative flex flex-col items-center flex-1 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg order-2 sm:-mx-2 md:-mx-4 lg:-mx-8 z-10 max-w-full"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.5 }}
           >
             {/* Interactive Powell Index Gauge */}
-            <div className="w-full lg:mt-2 flex items-center justify-center">
+            <div className="w-full lg:mt-2 flex items-center justify-center max-w-full">
               <PowellIndex />
             </div>
           </motion.div>
 
           {/* Cut Character */}
           <motion.div
-            className="relative group flex flex-col items-center flex-shrink-0 order-3 sm:-ml-3 md:-ml-4 lg:-ml-8"
+            className="relative group flex flex-col items-center flex-shrink-0 order-3 sm:-ml-3 md:-ml-4 lg:-ml-8 max-w-full"
             initial={{ x: 300, opacity: 0 }}
             animate={{ x: 0, opacity: 1, y: [0, -20, 0] }}
             transition={{ 
@@ -113,7 +113,7 @@ export default function Hero() {
             }}
           >
             <motion.div 
-              className="w-28 h-28 sm:w-32 sm:h-32 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative"
+              className="w-28 h-28 sm:w-32 sm:h-32 md:w-[18rem] md:h-[18rem] lg:w-[24rem] lg:h-[24rem] xl:w-[28rem] xl:h-[28rem] flex items-center justify-center mb-2 relative max-w-full"
               animate={{
                 scale: [1, 1.1, 1],
                 rotate: [0, 5, -5, 0]
@@ -130,13 +130,13 @@ export default function Hero() {
                   ]
                 }}
                 transition={{ duration: 0.5, repeat: Infinity }}
-                className="w-full h-full"
+                className="w-full h-full max-w-full"
               >
                 <Image
                   src="/cut-character-image.webp"
                   alt="Cut Character"
                   fill
-                  className="object-contain"
+                  className="object-contain max-w-full"
                   loading="eager"
                   priority
                   quality={75}
@@ -153,10 +153,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="text-center sm:mt-4 pb-4 sm:pb-6"
+          className="text-center sm:mt-4 pb-4 sm:pb-6 max-w-full"
         >
           <p 
-            className="text-white text-sm md:text-base lg:text-2xl font-mono tracking-wide"
+            className="text-white text-sm md:text-base lg:text-2xl font-mono tracking-wide max-w-full"
             style={{
               textShadow: `
                 0 0 10px rgba(255, 255, 255, 0.8),
@@ -174,48 +174,48 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.9 }}
-          className="flex flex-row gap-4 justify-center items-center mt-6 mb-6 sm:mt-8 flex-wrap w-full"
+          className="flex flex-row gap-4 justify-center items-center mt-6 mb-6 sm:mt-8 flex-wrap w-full max-w-full"
         >
           <button 
             onClick={togglePopup}
-            className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center cursor-pointer"
+            className="bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center cursor-pointer max-w-full"
             style={{boxShadow: '0 0 20px rgba(239, 68, 68, 0.5)'}}
           >
             Buy Now
           </button>
-          <a href="https://x.com/i/communities/1964799556366868890" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center" style={{boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)'}}>
+          <a href="https://x.com/i/communities/1964799556366868890" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm sm:text-base flex items-center justify-center max-w-full" style={{boxShadow: '0 0 20px rgba(234, 179, 8, 0.5)'}}>
             Join Community
           </a>
         </motion.div>
 
         {/* Popup Modal */}
         {showPopup && (
-          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[9999] p-4">
-            <div className="bg-gray-900 border-2 border-pink-500 rounded-xl p-6 sm:p-8 max-w-md w-full relative z-[10000]">
+          <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[9999] p-4 max-w-full">
+            <div className="bg-gray-900 border-2 border-pink-500 rounded-xl p-6 sm:p-8 max-w-md w-full relative z-[10000] max-w-full">
               <button 
                 onClick={togglePopup}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold"
+                className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold max-w-full"
               >
                 &times;
               </button>
               
-              <h3 className="text-xl sm:text-2xl font-bold text-pink-500 mb-4 text-center">
+              <h3 className="text-xl sm:text-2xl font-bold text-pink-500 mb-4 text-center max-w-full">
                 Presale Information
               </h3>
               
-              <p className="text-gray-300 text-center mb-6">
+              <p className="text-gray-300 text-center mb-6 max-w-full">
                 The Powell Index is loading...<br />
                 <span className="text-yellow-400 font-bold">Rate %</span> vs <span className="text-red-400 font-bold">Cut ✂️</span> battle begins soon!<br />
                 <span className="text-pink-400 animate-pulse">Join the chaos at launch!</span>
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-full">
               
                 <a
                   href="https://docs.pinksale.finance/investing/how-to-buy-a-presale"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-lg transition-all text-center"
+                  className="bg-pink-600 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-lg transition-all text-center max-w-full"
                 >
                   How to buy a Presale on Pinksale
 
