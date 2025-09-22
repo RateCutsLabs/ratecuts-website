@@ -29,7 +29,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="inter relative min-h-screen" style={{WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale', fontVariantLigatures: 'none'}}>
+      <body className="inter relative min-h-screen w-full overflow-x-hidden" style={{WebkitFontSmoothing: 'antialiased', MozOsxFontSmoothing: 'grayscale', fontVariantLigatures: 'none'}}>
         {/* Global Chaotic Background */}
         <div className="fixed inset-0 lightning-bg overflow-hidden pointer-events-none">
           <div className="absolute top-10 md:top-20 left-10 md:left-20 w-48 h-48 md:w-96 md:h-96 bg-yellow-400/20 rounded-full blur-3xl animate-lightning" />
@@ -95,8 +95,8 @@ export default function RootLayout({
         {/* Navigation */}
         <Navigation />
         
-        {/* Content - added mb-2 to ensure divider visibility */}
-        <div className="relative z-10 mb-2">
+        {/* Content - added mb-2 to ensure divider visibility and prevent horizontal overflow */}
+        <div className="relative z-10 mb-2 w-full overflow-x-hidden">
           {children}
         </div>
       </body>
