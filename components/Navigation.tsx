@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ExternalLink, Send, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 
 // Custom X Logo Component
 const XLogo = () => (
@@ -20,13 +21,17 @@ const XLogo = () => (
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const desktopMenuItems = [
     { label: 'HOME', href: '#hero' },
     { label: 'ABOUT', href: '#lore-section' },
     // { label: 'THE FIGHT', href: '#fighting-clip' },
     { label: 'COMIC', href: '#comic-section' },
+    { label: 'IMAGEGALLERY', href: '/gallery' },
     { label: 'TOKENOMICS', href: '#tokenomics', icon: XLogo },
+
     // { label: 'HOW TO BUY', href: '#how-to-buy' },
     // { label: 'TOKENOMICS', href: '#tokenomics' },
     // { label: 'ROADMAP', href: '#roadmap' },
@@ -66,9 +71,25 @@ export default function Navigation() {
     if (href.startsWith('http') || href.startsWith('https') || href.startsWith('mailto') || href.startsWith('tel')) {
       return;
     }
-    
+
+    // Internal route navigation like '/gallery'
+    if (href.startsWith('/')) {
+      e.preventDefault();
+      router.push(href);
+      setIsMenuOpen(false);
+      return;
+    }
+
+    // From other pages to a section on home: go to '/#section'
+    if (href.startsWith('#') && pathname !== '/') {
+      e.preventDefault();
+      router.push('/' + href);
+      setIsMenuOpen(false);
+      return;
+    }
+
     e.preventDefault();
-    
+
     // Handle home link specially
     if (href === '#hero') {
       window.scrollTo({
@@ -104,7 +125,7 @@ export default function Navigation() {
                 key={index}
                 href={item.href}
                 onClick={(e) => handleScroll(e, item.href)}
-                className="text-sm lg:text-base font-black text-yellow-400 hover:text-cyan-400 transition-colors system-font animate-neon-flicker whitespace-nowrap"
+                className={`text-sm lg:text-base font-black transition-colors system-font animate-neon-flicker whitespace-nowrap ${item.label === 'IMAGEGALLERY' && pathname === '/gallery' ? 'text-cyan-400' : 'text-yellow-400'} hover:text-cyan-400`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -112,6 +133,7 @@ export default function Navigation() {
               </motion.a>
             ))}
           </div>
+       
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex-shrink-0">
